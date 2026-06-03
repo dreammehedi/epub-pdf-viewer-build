@@ -4,10 +4,10 @@
   "description": "Premium Ebook (EPUB and PDF) viewer component library with content copy protection, highlights, notes, and quote sharing.",
   "main": "dist/epub-pdf-viewer.umd.js",
   "module": "dist/epub-pdf-viewer.es.js",
-  "react-native": "src/index.native.js",
+  "react-native": "native/index.native.js",
   "exports": {
     ".": {
-      "react-native": "./src/index.native.js",
+      "react-native": "./native/index.native.js",
       "import": "./dist/epub-pdf-viewer.es.js",
       "require": "./dist/epub-pdf-viewer.umd.js"
     },
