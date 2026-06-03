@@ -1,0 +1,47 @@
+{
+  "name": "epub-pdf-viewer",
+  "version": "1.0.0",
+  "description": "Premium Ebook (EPUB and PDF) viewer component library with content copy protection, highlights, notes, and quote sharing.",
+  "main": "dist/epub-pdf-viewer.umd.js",
+  "module": "dist/epub-pdf-viewer.es.js",
+  "react-native": "src/index.native.js",
+  "exports": {
+    ".": {
+      "react-native": "./src/index.native.js",
+      "import": "./dist/epub-pdf-viewer.es.js",
+      "require": "./dist/epub-pdf-viewer.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "scripts": {
+    "build": "vite build",
+    "deploy": "chmod +x deploy.sh && ./deploy.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "epub",
+    "pdf",
+    "viewer",
+    "highlights",
+    "copy-protection"
+  ],
+  "author": "readersfm",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "pdfjs-dist": "3.4.120",
+    "lodash.debounce": "^4.0.8",
+    "html-to-image": "^1.11.13",
+    "lucide-react": "^0.536.0",
+    "react-rnd": "^10.4.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0 || ^19.0.0",
+    "react-dom": "^18.2.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.0.12"
+  }
+}
