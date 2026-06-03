@@ -45807,7 +45807,7 @@ function PdfReader({
               {
                 onNewHightlight: Ae,
                 pdfSrc: e,
-                highlights: t,
+                highlights: Array.isArray(t) ? t : t ? [t] : [],
                 onDeleteHighlight: F,
                 onUpdateHighlight: U,
                 isDualPageArrow: ne.scrollMode === "horizontal",
