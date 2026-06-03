@@ -42493,31 +42493,31 @@ class PdfHighlighter extends PureComponent {
     return n ? findOrCreateContainerLayer(n, "PdfHighlighter__highlight-layer") : null;
   }
   groupHighlightsByPage(e) {
-    const { ghostHighlight: t } = this.state, n = [...e, t].filter(Boolean), s = /* @__PURE__ */ new Set();
-    for (const l of n)
-      if (l.position && (s.add(l.position.pageNumber), l.position.rects))
-        for (const o of l.position.rects)
-          o.pageNumber && s.add(o.pageNumber);
-    const a = {};
-    for (const l of s) {
-      a[l] = a[l] || [];
-      for (const o of n) {
-        if (!o.position)
+    const { ghostHighlight: t } = this.state, s = [...Array.isArray(e) ? e : e ? [e] : [], t].filter(Boolean), a = /* @__PURE__ */ new Set();
+    for (const o of s)
+      if (o.position && (a.add(o.position.pageNumber), o.position.rects))
+        for (const h of o.position.rects)
+          h.pageNumber && a.add(h.pageNumber);
+    const l = {};
+    for (const o of a) {
+      l[o] = l[o] || [];
+      for (const h of s) {
+        if (!h.position)
           continue;
-        const h = Object.assign(Object.assign({}, o), { position: {
-          pageNumber: l,
-          boundingRect: o.position.boundingRect,
+        const c = Object.assign(Object.assign({}, h), { position: {
+          pageNumber: o,
+          boundingRect: h.position.boundingRect,
           rects: [],
-          usePdfCoordinates: o.position.usePdfCoordinates
+          usePdfCoordinates: h.position.usePdfCoordinates
         } });
-        let c = !1;
-        if (o.position.rects)
-          for (const u of o.position.rects)
-            l === (u.pageNumber || o.position.pageNumber) && (h.position.rects.push(u), c = !0);
-        (c || l === o.position.pageNumber) && a[l].push(h);
+        let u = !1;
+        if (h.position.rects)
+          for (const g of h.position.rects)
+            o === (g.pageNumber || h.position.pageNumber) && (c.position.rects.push(g), u = !0);
+        (u || o === h.position.pageNumber) && l[o].push(c);
       }
     }
-    return a;
+    return l;
   }
   showTip(e, t) {
     const { isCollapsed: n, ghostHighlight: s, isAreaSelectionInProgress: a } = this.state;
