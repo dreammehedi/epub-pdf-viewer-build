@@ -42493,7 +42493,10 @@ class PdfHighlighter extends PureComponent {
     return n ? findOrCreateContainerLayer(n, "PdfHighlighter__highlight-layer") : null;
   }
   groupHighlightsByPage(e) {
-    const { ghostHighlight: t } = this.state, s = [...Array.isArray(e) ? e : e ? [e] : [], t].filter(Boolean), a = /* @__PURE__ */ new Set();
+    const { ghostHighlight: t } = this.state;
+    let n = [];
+    Array.isArray(e) ? n = e : e && typeof e == "object" && (e.id || e.position ? n = [e] : n = Object.values(e));
+    const s = [...n, t].filter(Boolean), a = /* @__PURE__ */ new Set();
     for (const o of s)
       if (o.position && (a.add(o.position.pageNumber), o.position.rects))
         for (const h of o.position.rects)
