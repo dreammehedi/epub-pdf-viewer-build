@@ -42498,7 +42498,7 @@ class PdfHighlighter extends PureComponent {
     Array.isArray(e) ? n = e : e && typeof e == "object" && (e.id || e.position ? n = [e] : n = Object.values(e));
     const s = [...n, t].filter(Boolean), a = /* @__PURE__ */ new Set();
     for (const o of s)
-      if (o.position && (a.add(o.position.pageNumber), o.position.rects))
+      if (o.position && (a.add(o.position.pageNumber), o.position.rects && Array.isArray(o.position.rects)))
         for (const h of o.position.rects)
           h.pageNumber && a.add(h.pageNumber);
     const l = {};
@@ -42514,7 +42514,7 @@ class PdfHighlighter extends PureComponent {
           usePdfCoordinates: h.position.usePdfCoordinates
         } });
         let u = !1;
-        if (h.position.rects)
+        if (h.position.rects && Array.isArray(h.position.rects))
           for (const g of h.position.rects)
             o === (g.pageNumber || h.position.pageNumber) && (c.position.rects.push(g), u = !0);
         (u || o === h.position.pageNumber) && l[o].push(c);
