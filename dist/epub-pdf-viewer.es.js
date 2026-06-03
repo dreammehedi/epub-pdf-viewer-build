@@ -379,17 +379,17 @@ function Wa() {
     }
     function Ne(j) {
       try {
-        return De(j), !1;
+        return Oe(j), !1;
       } catch {
         return !0;
       }
     }
-    function De(j) {
+    function Oe(j) {
       return "" + j;
     }
     function je(j) {
       if (Ne(j))
-        return w("The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.", he(j)), De(j);
+        return w("The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.", he(j)), Oe(j);
     }
     var Ye = p.ReactCurrentOwner, et = {
       key: !0,
@@ -427,7 +427,7 @@ function Wa() {
         });
       }
     }
-    function Oe(j, Te) {
+    function De(j, Te) {
       {
         var qe = function() {
           ht || (ht = !0, w("%s: `ref` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", Te));
@@ -480,7 +480,7 @@ function Wa() {
         }
         if (ot || Rt) {
           var Ut = typeof j == "function" ? j.displayName || j.name || "Unknown" : j;
-          ot && ce(dt, Ut), Rt && Oe(dt, Ut);
+          ot && ce(dt, Ut), Rt && De(dt, Ut);
         }
         return Z(j, ot, Rt, ut, tt, Ye.current, dt);
       }
@@ -12657,7 +12657,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
       function Ne(k, We) {
         k.pending_buf[k.pending++] = We >>> 8 & 255, k.pending_buf[k.pending++] = We & 255;
       }
-      function De(k, We, ae, R) {
+      function Oe(k, We, ae, R) {
         var ie = k.avail_in;
         return ie > R && (ie = R), ie === 0 ? 0 : (k.avail_in -= ie, a.arraySet(We, k.input, k.next_in, ie, ae), k.state.wrap === 1 ? k.adler = o(k.adler, We, ie, ae) : k.state.wrap === 2 && (k.adler = h(k.adler, We, ie, ae)), k.next_in += ie, k.total_in += ie, ie);
       }
@@ -12695,7 +12695,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
           }
           if (k.strm.avail_in === 0)
             break;
-          if (R = De(k.strm, k.window, k.strstart + k.lookahead, Se), k.lookahead += R, k.lookahead + k.insert >= G)
+          if (R = Oe(k.strm, k.window, k.strstart + k.lookahead, Se), k.lookahead += R, k.lookahead + k.insert >= G)
             for (He = k.strstart - k.insert, k.ins_h = k.window[He], k.ins_h = (k.ins_h << k.hash_shift ^ k.window[He + 1]) & k.hash_mask; k.insert && (k.ins_h = (k.ins_h << k.hash_shift ^ k.window[He + G - 1]) & k.hash_mask, k.prev[He & k.w_mask] = k.head[k.ins_h], k.head[k.ins_h] = He, He++, k.insert--, !(k.lookahead + k.insert < G)); )
               ;
         } while (k.lookahead < O && k.strm.avail_in !== 0);
@@ -12822,7 +12822,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
         new V(32, 258, 258, 4096, ht)
         /* 9 max compression */
       ];
-      function Oe(k) {
+      function De(k) {
         k.window_size = 2 * k.w_size, fe(k.head), k.max_lazy_match = ce[k.level].max_lazy, k.good_match = ce[k.level].good_length, k.nice_match = ce[k.level].nice_length, k.max_chain_length = ce[k.level].max_chain, k.strstart = 0, k.block_start = 0, k.lookahead = 0, k.insert = 0, k.match_length = k.prev_length = G - 1, k.match_available = 0, k.ins_h = 0;
       }
       function Z() {
@@ -12834,7 +12834,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
       }
       function Ve(k) {
         var We = ze(k);
-        return We === y && Oe(k.state), We;
+        return We === y && De(k.state), We;
       }
       function ke(k, We) {
         return !k || !k.state || k.state.wrap !== 2 ? p : (k.state.gzhead = We, y);
@@ -13036,7 +13036,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
       function Ne(de) {
         return (de >>> 24 & 255) + (de >>> 8 & 65280) + ((de & 65280) << 8) + ((de & 255) << 24);
       }
-      function De() {
+      function Oe() {
         this.mode = 0, this.last = !1, this.wrap = 0, this.havedict = !1, this.flags = 0, this.dmax = 0, this.check = 0, this.total = 0, this.head = null, this.wbits = 0, this.wsize = 0, this.whave = 0, this.wnext = 0, this.window = null, this.hold = 0, this.bits = 0, this.length = 0, this.offset = 0, this.extra = 0, this.lencode = null, this.distcode = null, this.lenbits = 0, this.distbits = 0, this.ncode = 0, this.nlen = 0, this.ndist = 0, this.have = 0, this.next = null, this.lens = new a.Buf16(320), this.work = new a.Buf16(288), this.lendyn = null, this.distdyn = null, this.sane = 0, this.back = 0, this.was = 0;
       }
       function je(de) {
@@ -13053,7 +13053,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
       }
       function rt(de, _e) {
         var D, xe;
-        return de ? (xe = new De(), de.state = xe, xe.window = null, D = et(de, _e), D !== d && (de.state = null), D) : E;
+        return de ? (xe = new Oe(), de.state = xe, xe.window = null, D = et(de, _e), D !== d && (de.state = null), D) : E;
       }
       function ht(de) {
         return rt(de, he);
@@ -13076,7 +13076,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
         }
         de.lencode = Ee, de.lenbits = 9, de.distcode = V, de.distbits = 5;
       }
-      function Oe(de, _e, D, xe) {
+      function De(de, _e, D, xe) {
         var it, k = de.state;
         return k.window === null && (k.wsize = 1 << k.wbits, k.wnext = 0, k.whave = 0, k.window = new a.Buf8(k.wsize)), xe >= k.wsize ? (a.arraySet(k.window, _e, D - k.wsize, k.wsize, 0), k.wnext = 0, k.whave = k.wsize) : (it = k.wsize - k.wnext, it > xe && (it = xe), a.arraySet(k.window, _e, D - xe, it, k.wnext), xe -= it, xe ? (a.arraySet(k.window, _e, D - xe, xe, 0), k.wnext = xe, k.whave = k.wsize) : (k.wnext += it, k.wnext === k.wsize && (k.wnext = 0), k.whave < k.wsize && (k.whave += it))), 0;
       }
@@ -13507,7 +13507,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
               default:
                 return E;
             }
-        return de.next_out = We, de.avail_out = R, de.next_in = k, de.avail_in = ae, D.hold = ie, D.bits = Se, (D.wsize || Ze !== de.avail_out && D.mode < U && (D.mode < Le || _e !== _)) && Oe(de, de.output, de.next_out, Ze - de.avail_out), He -= de.avail_in, Ze -= de.avail_out, de.total_in += He, de.total_out += Ze, D.total += Ze, D.wrap && Ze && (de.adler = D.check = /*UPDATE(state.check, strm.next_out - _out, _out);*/
+        return de.next_out = We, de.avail_out = R, de.next_in = k, de.avail_in = ae, D.hold = ie, D.bits = Se, (D.wsize || Ze !== de.avail_out && D.mode < U && (D.mode < Le || _e !== _)) && De(de, de.output, de.next_out, Ze - de.avail_out), He -= de.avail_in, Ze -= de.avail_out, de.total_in += He, de.total_out += Ze, D.total += Ze, D.wrap && Ze && (de.adler = D.check = /*UPDATE(state.check, strm.next_out - _out, _out);*/
         D.flags ? o(D.check, it, Ze, de.next_out - Ze) : l(D.check, it, Ze, de.next_out - Ze)), de.data_type = D.bits + (D.last ? 64 : 0) + (D.mode === pe ? 128 : 0) + (D.mode === oe || D.mode === G ? 256 : 0), (He === 0 && Ze === 0 || _e === _) && Rt === d && (Rt = C), Rt;
       }
       function ze(de) {
@@ -13522,7 +13522,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
       }
       function ke(de, _e) {
         var D = _e.length, xe, it, k;
-        return !de || !de.state || (xe = de.state, xe.wrap !== 0 && xe.mode !== ee) ? E : xe.mode === ee && (it = 1, it = l(it, _e, D, 0), it !== xe.check) ? S : (k = Oe(de, _e, D, D), k ? (xe.mode = H, f) : (xe.havedict = 1, d));
+        return !de || !de.state || (xe = de.state, xe.wrap !== 0 && xe.mode !== ee) ? E : xe.mode === ee && (it = 1, it = l(it, _e, D, 0), it !== xe.check) ? S : (k = De(de, _e, D, D), k ? (xe.mode = H, f) : (xe.havedict = 1, d));
       }
       s.inflateReset = Ye, s.inflateReset2 = et, s.inflateResetKeep = je, s.inflateInit = ht, s.inflateInit2 = rt, s.inflate = Z, s.inflateEnd = ze, s.inflateGetHeader = Ve, s.inflateSetDictionary = ke, s.inflateInfo = "pako inflate (from Nodeca project)";
     }, { "../utils/common": 41, "./adler32": 43, "./crc32": 45, "./inffast": 48, "./inftrees": 50 }], 50: [function(t, n, s) {
@@ -13911,7 +13911,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
           /*SMALLEST*/
         ], Ae(Z, ze), F(Ve, it, Z.bl_count);
       }
-      function De(Z, ze, Ve) {
+      function Oe(Z, ze, Ve) {
         var ke, de = -1, _e, D = ze[0 * 2 + 1], xe = 0, it = 7, k = 4;
         for (D === 0 && (it = 138, k = 3), ze[(Ve + 1) * 2 + 1] = 65535, ke = 0; ke <= Ve; ke++)
           _e = D, D = ze[(ke + 1) * 2 + 1], !(++xe < it && _e === D) && (xe < k ? Z.bl_tree[_e * 2] += xe : _e !== 0 ? (_e !== de && Z.bl_tree[_e * 2]++, Z.bl_tree[I * 2]++) : xe <= 10 ? Z.bl_tree[M * 2]++ : Z.bl_tree[$ * 2]++, xe = 0, de = _e, D === 0 ? (it = 138, k = 3) : _e === D ? (it = 6, k = 3) : (it = 7, k = 4));
@@ -13931,7 +13931,7 @@ https://github.com/nodeca/pako/blob/main/LICENSE
       }
       function Ye(Z) {
         var ze;
-        for (De(Z, Z.dyn_ltree, Z.l_desc.max_code), De(Z, Z.dyn_dtree, Z.d_desc.max_code), Ne(Z, Z.bl_desc), ze = S - 1; ze >= 3 && Z.bl_tree[K[ze] * 2 + 1] === 0; ze--)
+        for (Oe(Z, Z.dyn_ltree, Z.l_desc.max_code), Oe(Z, Z.dyn_dtree, Z.d_desc.max_code), Ne(Z, Z.bl_desc), ze = S - 1; ze >= 3 && Z.bl_tree[K[ze] * 2 + 1] === 0; ze--)
           ;
         return Z.opt_len += 3 * (ze + 1) + 5 + 5 + 4, ze;
       }
@@ -13967,10 +13967,10 @@ https://github.com/nodeca/pako/blob/main/LICENSE
         var de, _e, D = 0;
         Z.level > 0 ? (Z.strm.data_type === c && (Z.strm.data_type = rt(Z)), Ne(Z, Z.l_desc), Ne(Z, Z.d_desc), D = Ye(Z), de = Z.opt_len + 3 + 7 >>> 3, _e = Z.static_len + 3 + 7 >>> 3, _e <= de && (de = _e)) : de = _e = Ve + 5, Ve + 4 <= de && ze !== -1 ? Ee(Z, ze, Ve, ke) : Z.strategy === l || _e === de ? (Ce(Z, (v << 1) + (ke ? 1 : 0), 3), he(Z, ee, pe)) : (Ce(Z, (_ << 1) + (ke ? 1 : 0), 3), et(Z, Z.l_desc.max_code + 1, Z.d_desc.max_code + 1, D + 1), he(Z, Z.dyn_ltree, Z.dyn_dtree)), H(Z), ke && se(Z);
       }
-      function Oe(Z, ze, Ve) {
+      function De(Z, ze, Ve) {
         return Z.pending_buf[Z.d_buf + Z.last_lit * 2] = ze >>> 8 & 255, Z.pending_buf[Z.d_buf + Z.last_lit * 2 + 1] = ze & 255, Z.pending_buf[Z.l_buf + Z.last_lit] = Ve & 255, Z.last_lit++, ze === 0 ? Z.dyn_ltree[Ve * 2]++ : (Z.matches++, ze--, Z.dyn_ltree[(L[Ve] + p + 1) * 2]++, Z.dyn_dtree[me(ze) * 2]++), Z.last_lit === Z.lit_bufsize - 1;
       }
-      s._tr_init = pt, s._tr_stored_block = Ee, s._tr_flush_block = ce, s._tr_tally = Oe, s._tr_align = V;
+      s._tr_init = pt, s._tr_stored_block = Ee, s._tr_flush_block = ce, s._tr_tally = De, s._tr_align = V;
     }, { "../utils/common": 41 }], 53: [function(t, n, s) {
       function a() {
         this.input = null, this.next_in = 0, this.avail_in = 0, this.total_in = 0, this.output = null, this.next_out = 0, this.avail_out = 0, this.total_out = 0, this.msg = "", this.state = null, this.data_type = 2, this.adler = 0;
@@ -15012,7 +15012,7 @@ var Ea = { exports: {} };
       function Le() {
         return typeof openDatabase == "function";
       }
-      var Ae = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/", F = "~~local_forage_type~", U = /^~~local_forage_type~([^~]+)~/, H = "__lfsc__:", se = H.length, fe = "arbf", ve = "blob", ye = "si08", he = "ui08", Ne = "uic8", De = "si16", je = "si32", Ye = "ur16", et = "ui32", rt = "fl32", ht = "fl64", pt = se + fe.length, Ee = Object.prototype.toString;
+      var Ae = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/", F = "~~local_forage_type~", U = /^~~local_forage_type~([^~]+)~/, H = "__lfsc__:", se = H.length, fe = "arbf", ve = "blob", ye = "si08", he = "ui08", Ne = "uic8", Oe = "si16", je = "si32", Ye = "ur16", et = "ui32", rt = "fl32", ht = "fl64", pt = se + fe.length, Ee = Object.prototype.toString;
       function V(ge) {
         var Re = ge.length * 0.75, Ie = ge.length, Xe, Ge = 0, Ke, at, ft, yt;
         ge[ge.length - 1] === "=" && (Re--, ge[ge.length - 2] === "=" && Re--);
@@ -15027,11 +15027,11 @@ var Ea = { exports: {} };
           Ie += Ae[Re[Xe] >> 2], Ie += Ae[(Re[Xe] & 3) << 4 | Re[Xe + 1] >> 4], Ie += Ae[(Re[Xe + 1] & 15) << 2 | Re[Xe + 2] >> 6], Ie += Ae[Re[Xe + 2] & 63];
         return Re.length % 3 === 2 ? Ie = Ie.substring(0, Ie.length - 1) + "=" : Re.length % 3 === 1 && (Ie = Ie.substring(0, Ie.length - 2) + "=="), Ie;
       }
-      function Oe(ge, Re) {
+      function De(ge, Re) {
         var Ie = "";
         if (ge && (Ie = Ee.call(ge)), ge && (Ie === "[object ArrayBuffer]" || ge.buffer && Ee.call(ge.buffer) === "[object ArrayBuffer]")) {
           var Xe, Ge = H;
-          ge instanceof ArrayBuffer ? (Xe = ge, Ge += fe) : (Xe = ge.buffer, Ie === "[object Int8Array]" ? Ge += ye : Ie === "[object Uint8Array]" ? Ge += he : Ie === "[object Uint8ClampedArray]" ? Ge += Ne : Ie === "[object Int16Array]" ? Ge += De : Ie === "[object Uint16Array]" ? Ge += Ye : Ie === "[object Int32Array]" ? Ge += je : Ie === "[object Uint32Array]" ? Ge += et : Ie === "[object Float32Array]" ? Ge += rt : Ie === "[object Float64Array]" ? Ge += ht : Re(new Error("Failed to get type for BinaryArray"))), Re(Ge + ce(Xe));
+          ge instanceof ArrayBuffer ? (Xe = ge, Ge += fe) : (Xe = ge.buffer, Ie === "[object Int8Array]" ? Ge += ye : Ie === "[object Uint8Array]" ? Ge += he : Ie === "[object Uint8ClampedArray]" ? Ge += Ne : Ie === "[object Int16Array]" ? Ge += Oe : Ie === "[object Uint16Array]" ? Ge += Ye : Ie === "[object Int32Array]" ? Ge += je : Ie === "[object Uint32Array]" ? Ge += et : Ie === "[object Float32Array]" ? Ge += rt : Ie === "[object Float64Array]" ? Ge += ht : Re(new Error("Failed to get type for BinaryArray"))), Re(Ge + ce(Xe));
         } else if (Ie === "[object Blob]") {
           var Ke = new FileReader();
           Ke.onload = function() {
@@ -15065,7 +15065,7 @@ var Ea = { exports: {} };
             return new Uint8Array(Ke);
           case Ne:
             return new Uint8ClampedArray(Ke);
-          case De:
+          case Oe:
             return new Int16Array(Ke);
           case Ye:
             return new Uint16Array(Ke);
@@ -15082,7 +15082,7 @@ var Ea = { exports: {} };
         }
       }
       var ze = {
-        serialize: Oe,
+        serialize: De,
         deserialize: Z,
         stringToBuffer: V,
         bufferToString: ce
@@ -16559,17 +16559,17 @@ function Vl() {
     }
     function Ne(j) {
       try {
-        return De(j), !1;
+        return Oe(j), !1;
       } catch {
         return !0;
       }
     }
-    function De(j) {
+    function Oe(j) {
       return "" + j;
     }
     function je(j) {
       if (Ne(j))
-        return w("The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.", he(j)), De(j);
+        return w("The provided key is an unsupported type %s. This value must be coerced to a string before before using it here.", he(j)), Oe(j);
     }
     var Ye = p.ReactCurrentOwner, et = {
       key: !0,
@@ -16607,7 +16607,7 @@ function Vl() {
         });
       }
     }
-    function Oe(j, Te) {
+    function De(j, Te) {
       {
         var qe = function() {
           ht || (ht = !0, w("%s: `ref` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", Te));
@@ -16657,7 +16657,7 @@ function Vl() {
         }
         if (ot || Rt) {
           var Ut = typeof j == "function" ? j.displayName || j.name || "Unknown" : j;
-          ot && ce(dt, Ut), Rt && Oe(dt, Ut);
+          ot && ce(dt, Ut), Rt && De(dt, Ut);
         }
         return Z(j, ot, Rt, ut, tt, Ye.current, dt);
       }
@@ -20550,7 +20550,7 @@ function requirePonyfill() {
       function Ne(m) {
         return new rt(m);
       }
-      function De(m, A) {
+      function Oe(m, A) {
         m._reader._readRequests.push(A);
       }
       function je(m, A, B) {
@@ -20640,7 +20640,7 @@ function requirePonyfill() {
       function ce(m) {
         return new TypeError("ReadableStreamDefaultReader.prototype.".concat(m, " can only be used on a ReadableStreamDefaultReader"));
       }
-      var Oe, Z, ze;
+      var De, Z, ze;
       function Ve(m) {
         return m.slice();
       }
@@ -20697,7 +20697,7 @@ function requirePonyfill() {
         }(), Me = be.next;
         return { iterator: be, nextMethod: Me, done: !1 };
       }
-      var k = (ze = (Oe = n.asyncIterator) !== null && Oe !== void 0 ? Oe : (Z = n.for) === null || Z === void 0 ? void 0 : Z.call(n, "Symbol.asyncIterator")) !== null && ze !== void 0 ? ze : "@@asyncIterator";
+      var k = (ze = (De = n.asyncIterator) !== null && De !== void 0 ? De : (Z = n.for) === null || Z === void 0 ? void 0 : Z.call(n, "Symbol.asyncIterator")) !== null && ze !== void 0 ? ze : "@@asyncIterator";
       function We(m, A, B) {
         if (A === void 0 && (A = "sync"), B === void 0)
           if (A === "async") {
@@ -20978,7 +20978,7 @@ function requirePonyfill() {
               };
               this._pendingPullIntos.push(Ue);
             }
-            De(B, A), za(this);
+            Oe(B, A), za(this);
           }, m.prototype[pe] = function() {
             if (this._pendingPullIntos.length > 0) {
               var A = this._pendingPullIntos.peek();
@@ -22224,7 +22224,7 @@ function requirePonyfill() {
               var be = ut(this);
               this._closeRequested && this._queue.length === 0 ? (Bh(this), qc(B)) : Hc(this), A._chunkSteps(be);
             } else
-              De(B, A), Hc(this);
+              Oe(B, A), Hc(this);
           }, m.prototype[pe] = function() {
           }, m;
         }()
@@ -23187,7 +23187,7 @@ function requirePdf() {
           (i, e, t) => {
             Object.defineProperty(e, "__esModule", {
               value: !0
-            }), e.VerbosityLevel = e.Util = e.UnknownErrorException = e.UnexpectedResponseException = e.UNSUPPORTED_FEATURES = e.TextRenderingMode = e.RenderingIntentFlag = e.PermissionFlag = e.PasswordResponses = e.PasswordException = e.PageActionEventType = e.OPS = e.MissingPDFException = e.LINE_FACTOR = e.LINE_DESCENT_FACTOR = e.InvalidPDFException = e.ImageKind = e.IDENTITY_MATRIX = e.FormatError = e.FeatureTest = e.FONT_IDENTITY_MATRIX = e.DocumentActionEventType = e.CMapCompressionType = e.BaseException = e.BASELINE_FACTOR = e.AnnotationType = e.AnnotationStateModelType = e.AnnotationReviewState = e.AnnotationReplyType = e.AnnotationMode = e.AnnotationMarkedState = e.AnnotationFlag = e.AnnotationFieldFlag = e.AnnotationEditorType = e.AnnotationEditorPrefix = e.AnnotationEditorParamsType = e.AnnotationBorderStyleType = e.AnnotationActionEventType = e.AbortException = void 0, e.assert = G, e.bytesToString = Le, e.createPromiseCapability = pt, e.createValidAbsoluteUrl = O, e.getModificationDate = ht, e.getVerbosityLevel = ee, e.info = pe, e.isArrayBuffer = et, e.isArrayEqual = rt, e.objectFromMap = H, e.objectSize = U, e.setVerbosityLevel = Y, e.shadow = N, e.string32 = F, e.stringToBytes = Ae, e.stringToPDFString = De, e.stringToUTF8String = je, e.unreachable = L, e.utf8StringToString = Ye, e.warn = re, globalThis._pdfjsCompatibilityChecked || (globalThis._pdfjsCompatibilityChecked = !0, t(2));
+            }), e.VerbosityLevel = e.Util = e.UnknownErrorException = e.UnexpectedResponseException = e.UNSUPPORTED_FEATURES = e.TextRenderingMode = e.RenderingIntentFlag = e.PermissionFlag = e.PasswordResponses = e.PasswordException = e.PageActionEventType = e.OPS = e.MissingPDFException = e.LINE_FACTOR = e.LINE_DESCENT_FACTOR = e.InvalidPDFException = e.ImageKind = e.IDENTITY_MATRIX = e.FormatError = e.FeatureTest = e.FONT_IDENTITY_MATRIX = e.DocumentActionEventType = e.CMapCompressionType = e.BaseException = e.BASELINE_FACTOR = e.AnnotationType = e.AnnotationStateModelType = e.AnnotationReviewState = e.AnnotationReplyType = e.AnnotationMode = e.AnnotationMarkedState = e.AnnotationFlag = e.AnnotationFieldFlag = e.AnnotationEditorType = e.AnnotationEditorPrefix = e.AnnotationEditorParamsType = e.AnnotationBorderStyleType = e.AnnotationActionEventType = e.AbortException = void 0, e.assert = G, e.bytesToString = Le, e.createPromiseCapability = pt, e.createValidAbsoluteUrl = O, e.getModificationDate = ht, e.getVerbosityLevel = ee, e.info = pe, e.isArrayBuffer = et, e.isArrayEqual = rt, e.objectFromMap = H, e.objectSize = U, e.setVerbosityLevel = Y, e.shadow = N, e.string32 = F, e.stringToBytes = Ae, e.stringToPDFString = Oe, e.stringToUTF8String = je, e.unreachable = L, e.utf8StringToString = Ye, e.warn = re, globalThis._pdfjsCompatibilityChecked || (globalThis._pdfjsCompatibilityChecked = !0, t(2));
             const n = [1, 0, 0, 1, 0, 0];
             e.IDENTITY_MATRIX = n;
             const s = [1e-3, 0, 0, 1e-3, 0, 0];
@@ -23568,25 +23568,25 @@ function requirePdf() {
                     } catch {
                     }
                 }
-                const Oe = V ? new URL(Ee, V) : new URL(Ee);
-                if (te(Oe))
-                  return Oe;
+                const De = V ? new URL(Ee, V) : new URL(Ee);
+                if (te(De))
+                  return De;
               } catch {
               }
               return null;
             }
             function N(Ee, V, ce) {
-              let Oe = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : !1;
+              let De = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : !1;
               return Object.defineProperty(Ee, V, {
                 value: ce,
-                enumerable: !Oe,
+                enumerable: !De,
                 configurable: !0,
                 writable: !1
               }), ce;
             }
             const J = function() {
-              function V(ce, Oe) {
-                this.constructor === V && L("Cannot initialize BaseException."), this.message = ce, this.name = Oe;
+              function V(ce, De) {
+                this.constructor === V && L("Cannot initialize BaseException."), this.message = ce, this.name = De;
               }
               return V.prototype = new Error(), V.constructor = V, V;
             }();
@@ -23638,18 +23638,18 @@ function requirePdf() {
               const V = Ee.length, ce = 8192;
               if (V < ce)
                 return String.fromCharCode.apply(null, Ee);
-              const Oe = [];
+              const De = [];
               for (let Z = 0; Z < V; Z += ce) {
                 const ze = Math.min(Z + ce, V), Ve = Ee.subarray(Z, ze);
-                Oe.push(String.fromCharCode.apply(null, Ve));
+                De.push(String.fromCharCode.apply(null, Ve));
               }
-              return Oe.join("");
+              return De.join("");
             }
             function Ae(Ee) {
               typeof Ee != "string" && L("Invalid argument for stringToBytes");
               const V = Ee.length, ce = new Uint8Array(V);
-              for (let Oe = 0; Oe < V; ++Oe)
-                ce[Oe] = Ee.charCodeAt(Oe) & 255;
+              for (let De = 0; De < V; ++De)
+                ce[De] = Ee.charCodeAt(De) & 255;
               return ce;
             }
             function F(Ee) {
@@ -23660,8 +23660,8 @@ function requirePdf() {
             }
             function H(Ee) {
               const V = /* @__PURE__ */ Object.create(null);
-              for (const [ce, Oe] of Ee)
-                V[ce] = Oe;
+              for (const [ce, De] of Ee)
+                V[ce] = De;
               return V;
             }
             function se() {
@@ -23698,34 +23698,34 @@ function requirePdf() {
             e.FeatureTest = ve;
             const ye = [...Array(256).keys()].map((Ee) => Ee.toString(16).padStart(2, "0"));
             class he {
-              static makeHexColor(V, ce, Oe) {
-                return `#${ye[V]}${ye[ce]}${ye[Oe]}`;
+              static makeHexColor(V, ce, De) {
+                return `#${ye[V]}${ye[ce]}${ye[De]}`;
               }
               static scaleMinMax(V, ce) {
-                let Oe;
-                V[0] ? (V[0] < 0 && (Oe = ce[0], ce[0] = ce[1], ce[1] = Oe), ce[0] *= V[0], ce[1] *= V[0], V[3] < 0 && (Oe = ce[2], ce[2] = ce[3], ce[3] = Oe), ce[2] *= V[3], ce[3] *= V[3]) : (Oe = ce[0], ce[0] = ce[2], ce[2] = Oe, Oe = ce[1], ce[1] = ce[3], ce[3] = Oe, V[1] < 0 && (Oe = ce[2], ce[2] = ce[3], ce[3] = Oe), ce[2] *= V[1], ce[3] *= V[1], V[2] < 0 && (Oe = ce[0], ce[0] = ce[1], ce[1] = Oe), ce[0] *= V[2], ce[1] *= V[2]), ce[0] += V[4], ce[1] += V[4], ce[2] += V[5], ce[3] += V[5];
+                let De;
+                V[0] ? (V[0] < 0 && (De = ce[0], ce[0] = ce[1], ce[1] = De), ce[0] *= V[0], ce[1] *= V[0], V[3] < 0 && (De = ce[2], ce[2] = ce[3], ce[3] = De), ce[2] *= V[3], ce[3] *= V[3]) : (De = ce[0], ce[0] = ce[2], ce[2] = De, De = ce[1], ce[1] = ce[3], ce[3] = De, V[1] < 0 && (De = ce[2], ce[2] = ce[3], ce[3] = De), ce[2] *= V[1], ce[3] *= V[1], V[2] < 0 && (De = ce[0], ce[0] = ce[1], ce[1] = De), ce[0] *= V[2], ce[1] *= V[2]), ce[0] += V[4], ce[1] += V[4], ce[2] += V[5], ce[3] += V[5];
               }
               static transform(V, ce) {
                 return [V[0] * ce[0] + V[2] * ce[1], V[1] * ce[0] + V[3] * ce[1], V[0] * ce[2] + V[2] * ce[3], V[1] * ce[2] + V[3] * ce[3], V[0] * ce[4] + V[2] * ce[5] + V[4], V[1] * ce[4] + V[3] * ce[5] + V[5]];
               }
               static applyTransform(V, ce) {
-                const Oe = V[0] * ce[0] + V[1] * ce[2] + ce[4], Z = V[0] * ce[1] + V[1] * ce[3] + ce[5];
-                return [Oe, Z];
+                const De = V[0] * ce[0] + V[1] * ce[2] + ce[4], Z = V[0] * ce[1] + V[1] * ce[3] + ce[5];
+                return [De, Z];
               }
               static applyInverseTransform(V, ce) {
-                const Oe = ce[0] * ce[3] - ce[1] * ce[2], Z = (V[0] * ce[3] - V[1] * ce[2] + ce[2] * ce[5] - ce[4] * ce[3]) / Oe, ze = (-V[0] * ce[1] + V[1] * ce[0] + ce[4] * ce[1] - ce[5] * ce[0]) / Oe;
+                const De = ce[0] * ce[3] - ce[1] * ce[2], Z = (V[0] * ce[3] - V[1] * ce[2] + ce[2] * ce[5] - ce[4] * ce[3]) / De, ze = (-V[0] * ce[1] + V[1] * ce[0] + ce[4] * ce[1] - ce[5] * ce[0]) / De;
                 return [Z, ze];
               }
               static getAxialAlignedBoundingBox(V, ce) {
-                const Oe = he.applyTransform(V, ce), Z = he.applyTransform(V.slice(2, 4), ce), ze = he.applyTransform([V[0], V[3]], ce), Ve = he.applyTransform([V[2], V[1]], ce);
-                return [Math.min(Oe[0], Z[0], ze[0], Ve[0]), Math.min(Oe[1], Z[1], ze[1], Ve[1]), Math.max(Oe[0], Z[0], ze[0], Ve[0]), Math.max(Oe[1], Z[1], ze[1], Ve[1])];
+                const De = he.applyTransform(V, ce), Z = he.applyTransform(V.slice(2, 4), ce), ze = he.applyTransform([V[0], V[3]], ce), Ve = he.applyTransform([V[2], V[1]], ce);
+                return [Math.min(De[0], Z[0], ze[0], Ve[0]), Math.min(De[1], Z[1], ze[1], Ve[1]), Math.max(De[0], Z[0], ze[0], Ve[0]), Math.max(De[1], Z[1], ze[1], Ve[1])];
               }
               static inverseTransform(V) {
                 const ce = V[0] * V[3] - V[1] * V[2];
                 return [V[3] / ce, -V[1] / ce, -V[2] / ce, V[0] / ce, (V[2] * V[5] - V[4] * V[3]) / ce, (V[4] * V[1] - V[5] * V[0]) / ce];
               }
               static singularValueDecompose2dScale(V) {
-                const ce = [V[0], V[2], V[1], V[3]], Oe = V[0] * ce[0] + V[1] * ce[2], Z = V[0] * ce[1] + V[1] * ce[3], ze = V[2] * ce[0] + V[3] * ce[2], Ve = V[2] * ce[1] + V[3] * ce[3], ke = (Oe + Ve) / 2, de = Math.sqrt((Oe + Ve) ** 2 - 4 * (Oe * Ve - ze * Z)) / 2, _e = ke + de || 1, D = ke - de || 1;
+                const ce = [V[0], V[2], V[1], V[3]], De = V[0] * ce[0] + V[1] * ce[2], Z = V[0] * ce[1] + V[1] * ce[3], ze = V[2] * ce[0] + V[3] * ce[2], Ve = V[2] * ce[1] + V[3] * ce[3], ke = (De + Ve) / 2, de = Math.sqrt((De + Ve) ** 2 - 4 * (De * Ve - ze * Z)) / 2, _e = ke + de || 1, D = ke - de || 1;
                 return [Math.sqrt(_e), Math.sqrt(D)];
               }
               static normalizeRect(V) {
@@ -23733,17 +23733,17 @@ function requirePdf() {
                 return V[0] > V[2] && (ce[0] = V[2], ce[2] = V[0]), V[1] > V[3] && (ce[1] = V[3], ce[3] = V[1]), ce;
               }
               static intersect(V, ce) {
-                const Oe = Math.max(Math.min(V[0], V[2]), Math.min(ce[0], ce[2])), Z = Math.min(Math.max(V[0], V[2]), Math.max(ce[0], ce[2]));
-                if (Oe > Z)
+                const De = Math.max(Math.min(V[0], V[2]), Math.min(ce[0], ce[2])), Z = Math.min(Math.max(V[0], V[2]), Math.max(ce[0], ce[2]));
+                if (De > Z)
                   return null;
                 const ze = Math.max(Math.min(V[1], V[3]), Math.min(ce[1], ce[3])), Ve = Math.min(Math.max(V[1], V[3]), Math.max(ce[1], ce[3]));
-                return ze > Ve ? null : [Oe, ze, Z, Ve];
+                return ze > Ve ? null : [De, ze, Z, Ve];
               }
-              static bezierBoundingBox(V, ce, Oe, Z, ze, Ve, ke, de) {
+              static bezierBoundingBox(V, ce, De, Z, ze, Ve, ke, de) {
                 const _e = [], D = [[], []];
                 let xe, it, k, We, ae, R, ie, Se;
                 for (let ct = 0; ct < 2; ++ct) {
-                  if (ct === 0 ? (it = 6 * V - 12 * Oe + 6 * ze, xe = -3 * V + 9 * Oe - 9 * ze + 3 * ke, k = 3 * Oe - 3 * V) : (it = 6 * ce - 12 * Z + 6 * Ve, xe = -3 * ce + 9 * Z - 9 * Ve + 3 * de, k = 3 * Z - 3 * ce), Math.abs(xe) < 1e-12) {
+                  if (ct === 0 ? (it = 6 * V - 12 * De + 6 * ze, xe = -3 * V + 9 * De - 9 * ze + 3 * ke, k = 3 * De - 3 * V) : (it = 6 * ce - 12 * Z + 6 * Ve, xe = -3 * ce + 9 * Z - 9 * Ve + 3 * de, k = 3 * Z - 3 * ce), Math.abs(xe) < 1e-12) {
                     if (Math.abs(it) < 1e-12)
                       continue;
                     We = -k / it, 0 < We && We < 1 && _e.push(We);
@@ -23754,27 +23754,27 @@ function requirePdf() {
                 let He = _e.length, Ze;
                 const Qe = He;
                 for (; He--; )
-                  We = _e[He], Ze = 1 - We, D[0][He] = Ze * Ze * Ze * V + 3 * Ze * Ze * We * Oe + 3 * Ze * We * We * ze + We * We * We * ke, D[1][He] = Ze * Ze * Ze * ce + 3 * Ze * Ze * We * Z + 3 * Ze * We * We * Ve + We * We * We * de;
+                  We = _e[He], Ze = 1 - We, D[0][He] = Ze * Ze * Ze * V + 3 * Ze * Ze * We * De + 3 * Ze * We * We * ze + We * We * We * ke, D[1][He] = Ze * Ze * Ze * ce + 3 * Ze * Ze * We * Z + 3 * Ze * We * We * Ve + We * We * We * de;
                 return D[0][Qe] = V, D[1][Qe] = ce, D[0][Qe + 1] = ke, D[1][Qe + 1] = de, D[0].length = D[1].length = Qe + 2, [Math.min(...D[0]), Math.min(...D[1]), Math.max(...D[0]), Math.max(...D[1])];
               }
             }
             e.Util = he;
             const Ne = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 728, 711, 710, 729, 733, 731, 730, 732, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8226, 8224, 8225, 8230, 8212, 8211, 402, 8260, 8249, 8250, 8722, 8240, 8222, 8220, 8221, 8216, 8217, 8218, 8482, 64257, 64258, 321, 338, 352, 376, 381, 305, 322, 339, 353, 382, 0, 8364];
-            function De(Ee) {
+            function Oe(Ee) {
               if (Ee[0] >= "ï") {
                 let ce;
                 if (Ee[0] === "þ" && Ee[1] === "ÿ" ? ce = "utf-16be" : Ee[0] === "ÿ" && Ee[1] === "þ" ? ce = "utf-16le" : Ee[0] === "ï" && Ee[1] === "»" && Ee[2] === "¿" && (ce = "utf-8"), ce)
                   try {
-                    const Oe = new TextDecoder(ce, {
+                    const De = new TextDecoder(ce, {
                       fatal: !0
                     }), Z = Ae(Ee);
-                    return Oe.decode(Z);
-                  } catch (Oe) {
-                    re(`stringToPDFString: "${Oe}".`);
+                    return De.decode(Z);
+                  } catch (De) {
+                    re(`stringToPDFString: "${De}".`);
                   }
               }
               const V = [];
-              for (let ce = 0, Oe = Ee.length; ce < Oe; ce++) {
+              for (let ce = 0, De = Ee.length; ce < De; ce++) {
                 const Z = Ne[Ee.charCodeAt(ce)];
                 V.push(Z ? String.fromCharCode(Z) : Ee.charAt(ce));
               }
@@ -23792,7 +23792,7 @@ function requirePdf() {
             function rt(Ee, V) {
               if (Ee.length !== V.length)
                 return !1;
-              for (let ce = 0, Oe = Ee.length; ce < Oe; ce++)
+              for (let ce = 0, De = Ee.length; ce < De; ce++)
                 if (Ee[ce] !== V[ce])
                   return !1;
               return !0;
@@ -23808,11 +23808,11 @@ function requirePdf() {
                 get() {
                   return V;
                 }
-              }), Ee.promise = new Promise(function(ce, Oe) {
+              }), Ee.promise = new Promise(function(ce, De) {
                 Ee.resolve = function(Z) {
                   V = !0, ce(Z);
                 }, Ee.reject = function(Z) {
-                  V = !0, Oe(Z);
+                  V = !0, De(Z);
                 };
               }), Ee;
             }
@@ -25510,7 +25510,7 @@ function requirePdf() {
           /* 123 */
           /***/
           (i, e, t) => {
-            var n = t(39), s = t(6), a = t(7), l = t(27), o = t(17), h = t(10), c = t(44), u = t(24), g = t(124), v = t(20), _ = t(23), b = t(26), y = t(108), d = t(50), p = t(82), w = t(42), E = t(104), S = t(47), f = t(67), C = t(125), x = t(126), P = t(128), T = t(129), I = t(130), M = t(31), $ = t(131), Q = t(132), q = t(133), W = a.Object, K = a.Array, Y = a.Date, ee = a.Error, pe = a.EvalError, re = a.RangeError, L = a.ReferenceError, G = a.SyntaxError, te = a.TypeError, O = a.URIError, N = a.PerformanceMark, J = a.WebAssembly, oe = J && J.CompileError || ee, ue = J && J.LinkError || ee, me = J && J.RuntimeError || ee, ne = l("DOMException"), Ce = P.Map, we = P.has, Pe = P.get, Le = P.set, Ae = T.Set, F = T.add, U = l("Object", "keys"), H = o([].push), se = o((!0).valueOf), fe = o(1 .valueOf), ve = o("".valueOf), ye = o(Y.prototype.getTime), he = c("structuredClone"), Ne = "DataCloneError", De = "Transferring", je = function(ke) {
+            var n = t(39), s = t(6), a = t(7), l = t(27), o = t(17), h = t(10), c = t(44), u = t(24), g = t(124), v = t(20), _ = t(23), b = t(26), y = t(108), d = t(50), p = t(82), w = t(42), E = t(104), S = t(47), f = t(67), C = t(125), x = t(126), P = t(128), T = t(129), I = t(130), M = t(31), $ = t(131), Q = t(132), q = t(133), W = a.Object, K = a.Array, Y = a.Date, ee = a.Error, pe = a.EvalError, re = a.RangeError, L = a.ReferenceError, G = a.SyntaxError, te = a.TypeError, O = a.URIError, N = a.PerformanceMark, J = a.WebAssembly, oe = J && J.CompileError || ee, ue = J && J.LinkError || ee, me = J && J.RuntimeError || ee, ne = l("DOMException"), Ce = P.Map, we = P.has, Pe = P.get, Le = P.set, Ae = T.Set, F = T.add, U = l("Object", "keys"), H = o([].push), se = o((!0).valueOf), fe = o(1 .valueOf), ve = o("".valueOf), ye = o(Y.prototype.getTime), he = c("structuredClone"), Ne = "DataCloneError", Oe = "Transferring", je = function(ke) {
               return !h(function() {
                 var de = new a.Set([7]), _e = ke(de), D = ke(W(7));
                 return _e == de || !_e.has(7) || typeof D != "object" || D != 7;
@@ -25534,7 +25534,7 @@ function requirePdf() {
               throw new ne("Uncloneable type: " + ke, Ne);
             }, ce = function(ke, de) {
               throw new ne((de || "Cloning") + " of " + ke + " cannot be properly polyfilled in this engine", Ne);
-            }, Oe = function() {
+            }, De = function() {
               var ke;
               try {
                 ke = new a.DataTransfer();
@@ -25632,7 +25632,7 @@ function requirePdf() {
                   }
                   break;
                 case "FileList":
-                  if (We = Oe(), We) {
+                  if (We = De(), We) {
                     for (ae = 0, R = f(ke); ae < R; ae++)
                       We.items.add(Z(ke[ae], de));
                     k = We.files;
@@ -25790,7 +25790,7 @@ function requirePdf() {
                     throw new ne("Duplicate transferable", Ne);
                   switch (k = p(it), k) {
                     case "ImageBitmap":
-                      We = a.OffscreenCanvas, g(We) || ce(k, De);
+                      We = a.OffscreenCanvas, g(We) || ce(k, Oe);
                       try {
                         ie = new We(it.width, it.height), Se = ie.getContext("bitmaprenderer"), Se.transferFromImageBitmap(it), R = ie.transferToImageBitmap();
                       } catch {
@@ -25798,7 +25798,7 @@ function requirePdf() {
                       break;
                     case "AudioData":
                     case "VideoFrame":
-                      (!u(it.clone) || !u(it.close)) && ce(k, De);
+                      (!u(it.clone) || !u(it.close)) && ce(k, Oe);
                       try {
                         R = it.clone(), it.close();
                       } catch {
@@ -25811,7 +25811,7 @@ function requirePdf() {
                     case "ReadableStream":
                     case "TransformStream":
                     case "WritableStream":
-                      ce(k, De);
+                      ce(k, Oe);
                   }
                   if (R === void 0)
                     throw new ne("This object cannot be transferred: " + k, Ne);
@@ -27803,7 +27803,7 @@ function requirePdf() {
           /* 138 */
           /***/
           (i, e, t) => {
-            var Oe, Z, ze, Ve, ke;
+            var De, Z, ze, Ve, ke;
             Object.defineProperty(e, "__esModule", {
               value: !0
             }), e.KeyboardManager = e.CommandManager = e.ColorManager = e.AnnotationEditorUIManager = void 0, e.bindEvents = p, e.opacityToHex = w;
@@ -27874,13 +27874,13 @@ function requirePdf() {
             }
             class E {
               constructor() {
-                fs(this, Oe, 0);
+                fs(this, De, 0);
               }
               getId() {
-                return `${n.AnnotationEditorPrefix}${fd(this, Oe)._++}`;
+                return `${n.AnnotationEditorPrefix}${fd(this, De)._++}`;
               }
             }
-            Oe = new WeakMap();
+            De = new WeakMap();
             class S {
               constructor() {
                 fs(this, Z, []);
@@ -28066,7 +28066,7 @@ function requirePdf() {
                 };
               }
               destroy() {
-                d(this, Pe, De).call(this), c(this, Y)._off("editingaction", c(this, J)), c(this, Y)._off("pagechanging", c(this, oe)), c(this, Y)._off("scalechanging", c(this, ue)), c(this, Y)._off("rotationchanging", c(this, me));
+                d(this, Pe, Oe).call(this), c(this, Y)._off("editingaction", c(this, J)), c(this, Y)._off("pagechanging", c(this, oe)), c(this, Y)._off("scalechanging", c(this, ue)), c(this, Y)._off("rotationchanging", c(this, me));
                 for (const D of c(this, M).values())
                   D.destroy();
                 c(this, M).clear(), c(this, I).clear(), c(this, K).clear(), g(this, T, null), c(this, L).clear(), c(this, Q).destroy();
@@ -28168,7 +28168,7 @@ function requirePdf() {
                   hasSomethingToUndo: c(this, Q).hasSomethingToUndo(),
                   hasSomethingToRedo: c(this, Q).hasSomethingToRedo(),
                   hasSelectedEditor: !1
-                })) : (d(this, Pe, De).call(this), d(this, Ae, Ye).call(this), d(this, F, et).call(this, {
+                })) : (d(this, Pe, Oe).call(this), d(this, Ae, Ye).call(this), d(this, F, et).call(this, {
                   isEditing: !1
                 }));
               }
@@ -28338,7 +28338,7 @@ function requirePdf() {
             function Ne() {
               c(this, Ce).addEventListener("keydown", c(this, N));
             }
-            function De() {
+            function Oe() {
               c(this, Ce).removeEventListener("keydown", c(this, N));
             }
             function je() {
@@ -29170,11 +29170,11 @@ function requirePdf() {
             function E(te, O, N, J, oe, ue, me, ne, Ce, we) {
               const [Pe, Le, Ae, F, U, H] = (0, s.getCurrentTransform)(te);
               if (Le === 0 && Ae === 0) {
-                const ve = me * Pe + U, ye = Math.round(ve), he = ne * F + H, Ne = Math.round(he), De = (me + Ce) * Pe + U, je = Math.abs(Math.round(De) - ye) || 1, Ye = (ne + we) * F + H, et = Math.abs(Math.round(Ye) - Ne) || 1;
+                const ve = me * Pe + U, ye = Math.round(ve), he = ne * F + H, Ne = Math.round(he), Oe = (me + Ce) * Pe + U, je = Math.abs(Math.round(Oe) - ye) || 1, Ye = (ne + we) * F + H, et = Math.abs(Math.round(Ye) - Ne) || 1;
                 return te.setTransform(Math.sign(Pe), 0, 0, Math.sign(F), ye, Ne), te.drawImage(O, N, J, oe, ue, 0, 0, je, et), te.setTransform(Pe, Le, Ae, F, U, H), [je, et];
               }
               if (Pe === 0 && F === 0) {
-                const ve = ne * Ae + U, ye = Math.round(ve), he = me * Le + H, Ne = Math.round(he), De = (ne + we) * Ae + U, je = Math.abs(Math.round(De) - ye) || 1, Ye = (me + Ce) * Le + H, et = Math.abs(Math.round(Ye) - Ne) || 1;
+                const ve = ne * Ae + U, ye = Math.round(ve), he = me * Le + H, Ne = Math.round(he), Oe = (ne + we) * Ae + U, je = Math.abs(Math.round(Oe) - ye) || 1, Ye = (me + Ce) * Le + H, et = Math.abs(Math.round(Ye) - Ne) || 1;
                 return te.setTransform(0, Math.sign(Le), Math.sign(Ae), 0, ye, Ne), te.drawImage(O, N, J, oe, ue, 0, 0, et, je), te.setTransform(Pe, Le, Ae, F, U, H), [et, je];
               }
               te.drawImage(O, N, J, oe, ue, me, ne, Ce, we);
@@ -29228,8 +29228,8 @@ function requirePdf() {
                   do
                     fe += Ne;
                   while (!me[fe]);
-                  const De = me[fe];
-                  De !== 5 && De !== 10 ? (he = De, me[fe] = 0) : (he = De & 51 * he >> 4, me[fe] &= he >> 2 | he << 2), H.lineTo(fe % ue, fe / ue | 0), me[fe] || --F;
+                  const Oe = me[fe];
+                  Oe !== 5 && Oe !== 10 ? (he = Oe, me[fe] = 0) : (he = Oe & 51 * he >> 4, me[fe] &= he >> 2 | he << 2), H.lineTo(fe % ue, fe / ue | 0), me[fe] || --F;
                 } while (ye !== fe);
                 --ne;
               }
@@ -29311,35 +29311,35 @@ function requirePdf() {
                     break;
                 }
               if (O.kind === n.ImageKind.GRAYSCALE_1BPP) {
-                const Ne = Le.byteLength, De = new Uint32Array(Ae.buffer, 0, Ae.byteLength >> 2), je = De.length, Ye = oe + 7 >> 3;
+                const Ne = Le.byteLength, Oe = new Uint32Array(Ae.buffer, 0, Ae.byteLength >> 2), je = Oe.length, Ye = oe + 7 >> 3;
                 let et = 4294967295, rt = n.FeatureTest.isLittleEndian ? 4278190080 : 255;
                 for (he && he[0] === 255 && he[255] === 0 && ([et, rt] = [rt, et]), F = 0; F < ne; F++) {
                   for (H = F < me ? d : ue, Pe = 0, U = 0; U < H; U++) {
                     const ht = Ne - we;
                     let pt = 0;
                     const Ee = ht > Ye ? oe : ht * 8 - 7, V = Ee & -8;
-                    let ce = 0, Oe = 0;
+                    let ce = 0, De = 0;
                     for (; pt < V; pt += 8)
-                      Oe = Le[we++], De[Pe++] = Oe & 128 ? et : rt, De[Pe++] = Oe & 64 ? et : rt, De[Pe++] = Oe & 32 ? et : rt, De[Pe++] = Oe & 16 ? et : rt, De[Pe++] = Oe & 8 ? et : rt, De[Pe++] = Oe & 4 ? et : rt, De[Pe++] = Oe & 2 ? et : rt, De[Pe++] = Oe & 1 ? et : rt;
+                      De = Le[we++], Oe[Pe++] = De & 128 ? et : rt, Oe[Pe++] = De & 64 ? et : rt, Oe[Pe++] = De & 32 ? et : rt, Oe[Pe++] = De & 16 ? et : rt, Oe[Pe++] = De & 8 ? et : rt, Oe[Pe++] = De & 4 ? et : rt, Oe[Pe++] = De & 2 ? et : rt, Oe[Pe++] = De & 1 ? et : rt;
                     for (; pt < Ee; pt++)
-                      ce === 0 && (Oe = Le[we++], ce = 128), De[Pe++] = Oe & ce ? et : rt, ce >>= 1;
+                      ce === 0 && (De = Le[we++], ce = 128), Oe[Pe++] = De & ce ? et : rt, ce >>= 1;
                   }
                   for (; Pe < je; )
-                    De[Pe++] = 0;
+                    Oe[Pe++] = 0;
                   te.putImageData(Ce, 0, F * d);
                 }
               } else if (O.kind === n.ImageKind.RGBA_32BPP) {
                 const Ne = !!(fe || ve || ye);
                 for (U = 0, se = oe * d * 4, F = 0; F < me; F++) {
                   if (Ae.set(Le.subarray(we, we + se)), we += se, Ne)
-                    for (let De = 0; De < se; De += 4)
-                      fe && (Ae[De + 0] = fe[Ae[De + 0]]), ve && (Ae[De + 1] = ve[Ae[De + 1]]), ye && (Ae[De + 2] = ye[Ae[De + 2]]);
+                    for (let Oe = 0; Oe < se; Oe += 4)
+                      fe && (Ae[Oe + 0] = fe[Ae[Oe + 0]]), ve && (Ae[Oe + 1] = ve[Ae[Oe + 1]]), ye && (Ae[Oe + 2] = ye[Ae[Oe + 2]]);
                   te.putImageData(Ce, 0, U), U += d;
                 }
                 if (F < ne) {
                   if (se = oe * ue * 4, Ae.set(Le.subarray(we, we + se)), Ne)
-                    for (let De = 0; De < se; De += 4)
-                      fe && (Ae[De + 0] = fe[Ae[De + 0]]), ve && (Ae[De + 1] = ve[Ae[De + 1]]), ye && (Ae[De + 2] = ye[Ae[De + 2]]);
+                    for (let Oe = 0; Oe < se; Oe += 4)
+                      fe && (Ae[Oe + 0] = fe[Ae[Oe + 0]]), ve && (Ae[Oe + 1] = ve[Ae[Oe + 1]]), ye && (Ae[Oe + 2] = ye[Ae[Oe + 2]]);
                   te.putImageData(Ce, 0, U);
                 }
               } else if (O.kind === n.ImageKind.RGB_24BPP) {
@@ -29348,8 +29348,8 @@ function requirePdf() {
                   for (F >= me && (H = ue, se = oe * H), Pe = 0, U = se; U--; )
                     Ae[Pe++] = Le[we++], Ae[Pe++] = Le[we++], Ae[Pe++] = Le[we++], Ae[Pe++] = 255;
                   if (Ne)
-                    for (let De = 0; De < Pe; De += 4)
-                      fe && (Ae[De + 0] = fe[Ae[De + 0]]), ve && (Ae[De + 1] = ve[Ae[De + 1]]), ye && (Ae[De + 2] = ye[Ae[De + 2]]);
+                    for (let Oe = 0; Oe < Pe; Oe += 4)
+                      fe && (Ae[Oe + 0] = fe[Ae[Oe + 0]]), ve && (Ae[Oe + 1] = ve[Ae[Oe + 1]]), ye && (Ae[Oe + 2] = ye[Ae[Oe + 2]]);
                   te.putImageData(Ce, 0, F * d);
                 }
               } else
@@ -29552,8 +29552,8 @@ function requirePdf() {
                 Ae = n.Util.transform(Ae, [1, 0, 0, 1, 0, -oe]);
                 const F = n.Util.applyTransform([0, 0], Ae), U = n.Util.applyTransform([J, oe], Ae), H = n.Util.normalizeRect([F[0], F[1], U[0], U[1]]), se = Math.round(H[2] - H[0]) || 1, fe = Math.round(H[3] - H[1]) || 1, ve = this.cachedCanvases.getCanvas("fillCanvas", se, fe), ye = ve.context, he = Math.min(F[0], U[0]), Ne = Math.min(F[1], U[1]);
                 ye.translate(-he, -Ne), ye.transform(...Ae), Pe || (Pe = this._scaleImage(Le.canvas, (0, s.getCurrentTransformInverse)(ye)), Pe = Pe.img, Ce && me && Ce.set(we, Pe)), ye.imageSmoothingEnabled = W((0, s.getCurrentTransform)(ye), O.interpolate), E(ye, Pe, 0, 0, Pe.width, Pe.height, 0, 0, J, oe), ye.globalCompositeOperation = "source-in";
-                const De = n.Util.transform((0, s.getCurrentTransformInverse)(ye), [1, 0, 0, 1, -he, -Ne]);
-                return ye.fillStyle = me ? ue.getPattern(N, this, De, a.PathType.FILL) : ue, ye.fillRect(0, 0, J, oe), Ce && !me && (this.cachedCanvases.delete("fillCanvas"), Ce.set(we, ve.canvas)), {
+                const Oe = n.Util.transform((0, s.getCurrentTransformInverse)(ye), [1, 0, 0, 1, -he, -Ne]);
+                return ye.fillStyle = me ? ue.getPattern(N, this, Oe, a.PathType.FILL) : ue, ye.fillRect(0, 0, J, oe), Ce && !me && (this.cachedCanvases.delete("fillCanvas"), Ce.set(we, ve.canvas)), {
                   canvas: ve.canvas,
                   offsetX: Math.round(he),
                   offsetY: Math.round(Ne)
@@ -29829,52 +29829,52 @@ function requirePdf() {
                 let fe;
                 if (N.patternFill) {
                   ue.save();
-                  const De = N.fillColor.getPattern(ue, this, (0, s.getCurrentTransformInverse)(ue), a.PathType.FILL);
-                  fe = (0, s.getCurrentTransform)(ue), ue.restore(), ue.fillStyle = De;
+                  const Oe = N.fillColor.getPattern(ue, this, (0, s.getCurrentTransformInverse)(ue), a.PathType.FILL);
+                  fe = (0, s.getCurrentTransform)(ue), ue.restore(), ue.fillStyle = Oe;
                 }
                 let ve = N.lineWidth;
                 const ye = N.textMatrixScale;
                 if (ye === 0 || ve === 0) {
-                  const De = N.textRenderingMode & n.TextRenderingMode.FILL_STROKE_MASK;
-                  (De === n.TextRenderingMode.STROKE || De === n.TextRenderingMode.FILL_STROKE) && (ve = this.getSinglePixelWidth());
+                  const Oe = N.textRenderingMode & n.TextRenderingMode.FILL_STROKE_MASK;
+                  (Oe === n.TextRenderingMode.STROKE || Oe === n.TextRenderingMode.FILL_STROKE) && (ve = this.getSinglePixelWidth());
                 } else
                   ve /= ye;
                 if (me !== 1 && (ue.scale(me, me), ve /= me), ue.lineWidth = ve, J.isInvalidPDFjsFont) {
-                  const De = [];
+                  const Oe = [];
                   let je = 0;
                   for (const Ye of O)
-                    De.push(Ye.unicode), je += Ye.width;
-                  ue.fillText(De.join(""), 0, 0), N.x += je * H * Pe, ue.restore(), this.compose();
+                    Oe.push(Ye.unicode), je += Ye.width;
+                  ue.fillText(Oe.join(""), 0, 0), N.x += je * H * Pe, ue.restore(), this.compose();
                   return;
                 }
                 let he = 0, Ne;
                 for (Ne = 0; Ne < Le; ++Ne) {
-                  const De = O[Ne];
-                  if (typeof De == "number") {
-                    he += F * De * oe / 1e3;
+                  const Oe = O[Ne];
+                  if (typeof Oe == "number") {
+                    he += F * Oe * oe / 1e3;
                     continue;
                   }
                   let je = !1;
-                  const Ye = (De.isSpace ? Ce : 0) + ne, et = De.fontChar, rt = De.accent;
-                  let ht, pt, Ee = De.width;
+                  const Ye = (Oe.isSpace ? Ce : 0) + ne, et = Oe.fontChar, rt = Oe.accent;
+                  let ht, pt, Ee = Oe.width;
                   if (Ae) {
-                    const ce = De.vmetric || U, Oe = -(De.vmetric ? ce[1] : Ee * 0.5) * H, Z = ce[2] * H;
-                    Ee = ce ? -ce[0] : Ee, ht = Oe / me, pt = (he + Z) / me;
+                    const ce = Oe.vmetric || U, De = -(Oe.vmetric ? ce[1] : Ee * 0.5) * H, Z = ce[2] * H;
+                    Ee = ce ? -ce[0] : Ee, ht = De / me, pt = (he + Z) / me;
                   } else
                     ht = he / me, pt = 0;
                   if (J.remeasure && Ee > 0) {
                     const ce = ue.measureText(et).width * 1e3 / oe * me;
                     if (Ee < ce && this.isFontSubpixelAAEnabled) {
-                      const Oe = Ee / ce;
-                      je = !0, ue.save(), ue.scale(Oe, 1), ht /= Oe;
+                      const De = Ee / ce;
+                      je = !0, ue.save(), ue.scale(De, 1), ht /= De;
                     } else Ee !== ce && (ht += (Ee - ce) / 2e3 * oe / me);
                   }
-                  if (this.contentVisible && (De.isInFont || J.missingFile)) {
+                  if (this.contentVisible && (Oe.isInFont || J.missingFile)) {
                     if (se && !rt)
                       ue.fillText(et, ht, pt);
                     else if (this.paintChar(et, ht, pt, fe), rt) {
-                      const ce = ht + oe * rt.offset.x / me, Oe = pt - oe * rt.offset.y / me;
-                      this.paintChar(rt.fontChar, ce, Oe, fe);
+                      const ce = ht + oe * rt.offset.x / me, De = pt - oe * rt.offset.y / me;
+                      this.paintChar(rt.fontChar, ce, De, fe);
                     }
                   }
                   let V;
@@ -33135,7 +33135,7 @@ function requirePdf() {
                     S(this, L, Ne).call(this, ie);
                     break;
                   case n.AnnotationEditorParamsType.INK_COLOR:
-                    S(this, G, De).call(this, ie);
+                    S(this, G, Oe).call(this, ie);
                     break;
                   case n.AnnotationEditorParamsType.INK_OPACITY:
                     S(this, te, je).call(this, ie);
@@ -33149,7 +33149,7 @@ function requirePdf() {
                 return [[n.AnnotationEditorParamsType.INK_THICKNESS, this.thickness || he._defaultThickness], [n.AnnotationEditorParamsType.INK_COLOR, this.color || he._defaultColor || s.AnnotationEditor._defaultLineColor], [n.AnnotationEditorParamsType.INK_OPACITY, Math.round(100 * (this.opacity ?? he._defaultOpacity))]];
               }
               rebuild() {
-                super.rebuild(), this.div !== null && (this.canvas || (S(this, Ce, ce).call(this), S(this, we, Oe).call(this)), this.isAttachedToDOM || (this.parent.add(this), S(this, Pe, Z).call(this)), S(this, ve, k).call(this));
+                super.rebuild(), this.div !== null && (this.canvas || (S(this, Ce, ce).call(this), S(this, we, De).call(this)), this.isAttachedToDOM || (this.parent.add(this), S(this, Pe, Z).call(this)), S(this, ve, k).call(this));
               }
               remove() {
                 this.canvas !== null && (this.isEmpty() || this.commit(), this.canvas.width = this.canvas.height = 0, this.canvas.remove(), this.canvas = null, p(this, Y).disconnect(), y(this, Y, null), super.remove());
@@ -33207,7 +33207,7 @@ function requirePdf() {
                   this.setAt(R * ct, ie * Lt, this.width * ct, this.height * Lt), y(this, W, !0), S(this, Pe, Z).call(this), this.setDims(this.width * ct, this.height * Lt), S(this, me, Ee).call(this), S(this, ye, We).call(this), this.div.classList.add("disabled");
                 } else
                   this.div.classList.add("editing"), this.enableEditMode();
-                return S(this, we, Oe).call(this), this.div;
+                return S(this, we, De).call(this), this.div;
               }
               setDimensions(R, ie) {
                 const Se = Math.round(R), He = Math.round(ie);
@@ -33270,7 +33270,7 @@ function requirePdf() {
                 keepUndo: !0
               });
             }
-            function De(ae) {
+            function Oe(ae) {
               const R = this.color;
               this.addCommands({
                 cmd: () => {
@@ -33353,7 +33353,7 @@ function requirePdf() {
               const Qe = () => {
                 this.paths.push(He), this.bezierPath2D.push(Ze), this.rebuild();
               }, ct = () => {
-                this.paths.pop(), this.bezierPath2D.pop(), this.paths.length === 0 ? this.remove() : (this.canvas || (S(this, Ce, ce).call(this), S(this, we, Oe).call(this)), S(this, ve, k).call(this));
+                this.paths.pop(), this.bezierPath2D.pop(), this.paths.length === 0 ? this.remove() : (this.canvas || (S(this, Ce, ce).call(this), S(this, we, De).call(this)), S(this, ve, k).call(this));
               };
               this.addCommands({
                 cmd: Qe,
@@ -33384,7 +33384,7 @@ function requirePdf() {
                 return (R = this.canvas) === null || R === void 0 ? void 0 : R.setAttribute("aria-label", ae);
               }), this.div.append(this.canvas), this.ctx = this.canvas.getContext("2d");
             }
-            function Oe() {
+            function De() {
               let ae = null;
               y(this, Y, new ResizeObserver((R) => {
                 const ie = R[0].contentRect;
@@ -33749,7 +33749,7 @@ function requirePdf() {
                   pageX: he,
                   pageY: Ne
                 } = se.rawDims, {
-                  width: De,
+                  width: Oe,
                   height: je
                 } = d(U.rect), Ye = n.Util.normalizeRect([U.rect[0], H.view[3] - U.rect[1] + H.view[1], U.rect[2], H.view[3] - U.rect[3] + H.view[1]]);
                 if (!F && U.borderStyle.width > 0) {
@@ -33759,7 +33759,7 @@ function requirePdf() {
                     const Ee = `calc(${rt}px * var(--scale-factor)) / calc(${ht}px * var(--scale-factor))`;
                     fe.style.borderRadius = Ee;
                   } else if (this instanceof $) {
-                    const Ee = `calc(${De}px * var(--scale-factor)) / calc(${je}px * var(--scale-factor))`;
+                    const Ee = `calc(${Oe}px * var(--scale-factor)) / calc(${je}px * var(--scale-factor))`;
                     fe.style.borderRadius = Ee;
                   }
                   switch (U.borderStyle.style) {
@@ -33786,7 +33786,7 @@ function requirePdf() {
                 const {
                   rotation: et
                 } = U;
-                return U.hasOwnCanvas || et === 0 ? (fe.style.width = `${100 * De / ve}%`, fe.style.height = `${100 * je / ye}%`) : this.setRotation(et, fe), fe;
+                return U.hasOwnCanvas || et === 0 ? (fe.style.width = `${100 * Oe / ve}%`, fe.style.height = `${100 * je / ye}%`) : this.setRotation(et, fe), fe;
               }
               setRotation(F) {
                 let U = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : this.container;
@@ -34083,8 +34083,8 @@ function requirePdf() {
                     et.dispatchEvent(new Event("resetform"));
                   }
                   if (this.enableScripting) {
-                    var De;
-                    (De = this.linkService.eventBus) === null || De === void 0 || De.dispatch("dispatcheventinsandbox", {
+                    var Oe;
+                    (Oe = this.linkService.eventBus) === null || Oe === void 0 || Oe.dispatch("dispatcheventinsandbox", {
                       source: this,
                       detail: {
                         id: "app",
@@ -34172,7 +34172,7 @@ function requirePdf() {
                 let ve;
                 const ye = 2, he = (Ne) => Math.round(10 * Ne) / 10;
                 if (this.data.multiLine) {
-                  const Ne = Math.abs(this.data.rect[3] - this.data.rect[1] - ye), De = Math.round(Ne / (n.LINE_FACTOR * se)) || 1, je = Ne / De;
+                  const Ne = Math.abs(this.data.rect[3] - this.data.rect[1] - ye), Oe = Math.round(Ne / (n.LINE_FACTOR * se)) || 1, je = Ne / Oe;
                   ve = Math.min(se, he(je / n.LINE_FACTOR));
                 } else {
                   const Ne = Math.abs(this.data.rect[3] - this.data.rect[1] - ye);
@@ -34217,19 +34217,19 @@ function requirePdf() {
                     lastCommittedValue: null,
                     commitKey: 1
                   };
-                  this.data.multiLine ? (H = document.createElement("textarea"), H.textContent = ve, this.data.doNotScroll && (H.style.overflowY = "hidden")) : (H = document.createElement("input"), H.type = "text", H.setAttribute("value", ve), this.data.doNotScroll && (H.style.overflowX = "hidden")), y.add(H), H.setAttribute("data-element-id", U), H.disabled = this.data.readOnly, H.name = this.data.fieldName, H.tabIndex = _, this._setRequired(H, this.data.required), ye && (H.maxLength = ye), H.addEventListener("input", (De) => {
+                  this.data.multiLine ? (H = document.createElement("textarea"), H.textContent = ve, this.data.doNotScroll && (H.style.overflowY = "hidden")) : (H = document.createElement("input"), H.type = "text", H.setAttribute("value", ve), this.data.doNotScroll && (H.style.overflowX = "hidden")), y.add(H), H.setAttribute("data-element-id", U), H.disabled = this.data.readOnly, H.name = this.data.fieldName, H.tabIndex = _, this._setRequired(H, this.data.required), ye && (H.maxLength = ye), H.addEventListener("input", (Oe) => {
                     F.setValue(U, {
-                      value: De.target.value
-                    }), this.setPropertyOnSiblings(H, "value", De.target.value, "value");
-                  }), H.addEventListener("resetform", (De) => {
+                      value: Oe.target.value
+                    }), this.setPropertyOnSiblings(H, "value", Oe.target.value, "value");
+                  }), H.addEventListener("resetform", (Oe) => {
                     const je = this.data.defaultFieldValue ?? "";
                     H.value = he.userValue = je, he.formattedValue = null;
                   });
-                  let Ne = (De) => {
+                  let Ne = (Oe) => {
                     const {
                       formattedValue: je
                     } = he;
-                    je != null && (De.target.value = je), De.target.scrollLeft = 0;
+                    je != null && (Oe.target.value = je), Oe.target.scrollLeft = 0;
                   };
                   if (this.enableScripting && this.hasJSActions) {
                     var se;
@@ -34308,7 +34308,7 @@ function requirePdf() {
                         }
                       }));
                     });
-                    const De = Ne;
+                    const Oe = Ne;
                     Ne = null, H.addEventListener("blur", (je) => {
                       if (!je.relatedTarget)
                         return;
@@ -34330,7 +34330,7 @@ function requirePdf() {
                           }
                         });
                       }
-                      De(je);
+                      Oe(je);
                     }), (se = this.data.actions) !== null && se !== void 0 && se.Keystroke && H.addEventListener("beforeinput", (je) => {
                       var Ye;
                       he.lastCommittedValue = null;
@@ -34345,13 +34345,13 @@ function requirePdf() {
                       let V = pt, ce = Ee;
                       switch (je.inputType) {
                         case "deleteWordBackward": {
-                          const Oe = ht.substring(0, pt).match(/\w*[^\w]*$/);
-                          Oe && (V -= Oe[0].length);
+                          const De = ht.substring(0, pt).match(/\w*[^\w]*$/);
+                          De && (V -= De[0].length);
                           break;
                         }
                         case "deleteWordForward": {
-                          const Oe = ht.substring(pt).match(/^[^\w]*\w*/);
-                          Oe && (ce += Oe[0].length);
+                          const De = ht.substring(pt).match(/^[^\w]*\w*/);
+                          De && (ce += De[0].length);
                           break;
                         }
                         case "deleteContentBackward":
@@ -34405,9 +34405,9 @@ function requirePdf() {
                     checked: he
                   } = ve.target;
                   for (const Ne of this._getElementsByName(ye, H)) {
-                    const De = he && Ne.exportValue === U.exportValue;
-                    Ne.domElement && (Ne.domElement.checked = De), F.setValue(Ne.id, {
-                      value: De
+                    const Oe = he && Ne.exportValue === U.exportValue;
+                    Ne.domElement && (Ne.domElement.checked = Oe), F.setValue(Ne.id, {
+                      value: Oe
                     });
                   }
                   F.setValue(H, {
@@ -34464,9 +34464,9 @@ function requirePdf() {
                   fe.addEventListener("updatefromsandbox", (ye) => {
                     const he = {
                       value: (Ne) => {
-                        const De = ve === Ne.detail.value;
+                        const Oe = ve === Ne.detail.value;
                         for (const je of this._getElementsByName(Ne.target.name)) {
-                          const Ye = De && je.id === H;
+                          const Ye = Oe && je.id === H;
                           je.domElement && (je.domElement.checked = Ye), F.setValue(je.id, {
                             value: Ye
                           });
@@ -34507,38 +34507,38 @@ function requirePdf() {
                 }), se = document.createElement("select");
                 y.add(se), se.setAttribute("data-element-id", U), se.disabled = this.data.readOnly, this._setRequired(se, this.data.required), se.name = this.data.fieldName, se.tabIndex = _;
                 let fe = this.data.combo && this.data.options.length > 0;
-                this.data.combo || (se.size = this.data.options.length, this.data.multiSelect && (se.multiple = !0)), se.addEventListener("resetform", (De) => {
+                this.data.combo || (se.size = this.data.options.length, this.data.multiSelect && (se.multiple = !0)), se.addEventListener("resetform", (Oe) => {
                   const je = this.data.defaultFieldValue;
                   for (const Ye of se.options)
                     Ye.selected = Ye.value === je;
                 });
-                for (const De of this.data.options) {
+                for (const Oe of this.data.options) {
                   const je = document.createElement("option");
-                  je.textContent = De.displayValue, je.value = De.exportValue, H.value.includes(De.exportValue) && (je.setAttribute("selected", !0), fe = !1), se.append(je);
+                  je.textContent = Oe.displayValue, je.value = Oe.exportValue, H.value.includes(Oe.exportValue) && (je.setAttribute("selected", !0), fe = !1), se.append(je);
                 }
                 let ve = null;
                 if (fe) {
-                  const De = document.createElement("option");
-                  De.value = " ", De.setAttribute("hidden", !0), De.setAttribute("selected", !0), se.prepend(De), ve = () => {
-                    De.remove(), se.removeEventListener("input", ve), ve = null;
+                  const Oe = document.createElement("option");
+                  Oe.value = " ", Oe.setAttribute("hidden", !0), Oe.setAttribute("selected", !0), se.prepend(Oe), ve = () => {
+                    Oe.remove(), se.removeEventListener("input", ve), ve = null;
                   }, se.addEventListener("input", ve);
                 }
-                const ye = (De) => {
-                  const je = De ? "value" : "textContent", {
+                const ye = (Oe) => {
+                  const je = Oe ? "value" : "textContent", {
                     options: Ye,
                     multiple: et
                   } = se;
                   return et ? Array.prototype.filter.call(Ye, (rt) => rt.selected).map((rt) => rt[je]) : Ye.selectedIndex === -1 ? null : Ye[Ye.selectedIndex][je];
                 };
                 let he = ye(!1);
-                const Ne = (De) => {
-                  const je = De.target.options;
+                const Ne = (Oe) => {
+                  const je = Oe.target.options;
                   return Array.prototype.map.call(je, (Ye) => ({
                     displayValue: Ye.textContent,
                     exportValue: Ye.value
                   }));
                 };
-                return this.enableScripting && this.hasJSActions ? (se.addEventListener("updatefromsandbox", (De) => {
+                return this.enableScripting && this.hasJSActions ? (se.addEventListener("updatefromsandbox", (Oe) => {
                   const je = {
                     value(Ye) {
                       var et;
@@ -34609,13 +34609,13 @@ function requirePdf() {
                       Ye.target.disabled = !Ye.detail.editable;
                     }
                   };
-                  this._dispatchEventFromSandbox(je, De);
-                }), se.addEventListener("input", (De) => {
+                  this._dispatchEventFromSandbox(je, Oe);
+                }), se.addEventListener("input", (Oe) => {
                   var je;
                   const Ye = ye(!0);
                   F.setValue(U, {
                     value: Ye
-                  }), De.preventDefault(), (je = this.linkService.eventBus) === null || je === void 0 || je.dispatch("dispatcheventinsandbox", {
+                  }), Oe.preventDefault(), (je = this.linkService.eventBus) === null || je === void 0 || je.dispatch("dispatcheventinsandbox", {
                     source: this,
                     detail: {
                       id: U,
@@ -34627,7 +34627,7 @@ function requirePdf() {
                       keyDown: !1
                     }
                   });
-                }), this._setEventListeners(se, [["focus", "Focus"], ["blur", "Blur"], ["mousedown", "Mouse Down"], ["mouseenter", "Mouse Enter"], ["mouseleave", "Mouse Exit"], ["mouseup", "Mouse Up"], ["input", "Action"], ["input", "Validate"]], (De) => De.target.value)) : se.addEventListener("input", function(De) {
+                }), this._setEventListeners(se, [["focus", "Focus"], ["blur", "Blur"], ["mousedown", "Mouse Down"], ["mouseenter", "Mouse Enter"], ["mouseleave", "Mouse Exit"], ["mouseup", "Mouse Up"], ["input", "Action"], ["input", "Validate"]], (Oe) => Oe.target.value)) : se.addEventListener("input", function(Oe) {
                   F.setValue(U, {
                     value: ye(!0)
                   });
@@ -34661,9 +34661,9 @@ function requirePdf() {
                   pageWidth: ye,
                   pageHeight: he,
                   pageX: Ne,
-                  pageY: De
+                  pageY: Oe
                 } = this.viewport.rawDims;
-                return this.container.style.left = `${100 * (fe - Ne) / ye}%`, this.container.style.top = `${100 * (ve - De) / he}%`, this.container.append(U.render()), this.container;
+                return this.container.style.left = `${100 * (fe - Ne) / ye}%`, this.container.style.top = `${100 * (ve - Oe) / he}%`, this.container.append(U.render()), this.container;
               }
             };
             lc(Le, "IGNORE_TYPES", /* @__PURE__ */ new Set(["Line", "Square", "Circle", "PolyLine", "Polygon", "Ink"]));
@@ -34680,8 +34680,8 @@ function requirePdf() {
                 fe.className = "popup";
                 const ve = this.color;
                 if (ve) {
-                  const Ne = 0.7 * (255 - ve[0]) + ve[0], De = 0.7 * (255 - ve[1]) + ve[1], je = 0.7 * (255 - ve[2]) + ve[2];
-                  fe.style.backgroundColor = n.Util.makeHexColor(Ne | 0, De | 0, je | 0);
+                  const Ne = 0.7 * (255 - ve[0]) + ve[0], Oe = 0.7 * (255 - ve[1]) + ve[1], je = 0.7 * (255 - ve[2]) + ve[2];
+                  fe.style.backgroundColor = n.Util.makeHexColor(Ne | 0, Oe | 0, je | 0);
                 }
                 const ye = document.createElement("h1");
                 ye.dir = this.titleObj.dir, ye.textContent = this.titleObj.str, fe.append(ye);
@@ -34869,8 +34869,8 @@ function requirePdf() {
                 for (const fe of F.inkLists) {
                   let ve = [];
                   for (const he of fe) {
-                    const Ne = he.x - F.rect[0], De = F.rect[3] - he.y;
-                    ve.push(`${Ne},${De}`);
+                    const Ne = he.x - F.rect[0], Oe = F.rect[3] - he.y;
+                    ve.push(`${Ne},${Oe}`);
                   }
                   ve = ve.join(" ");
                   const ye = this.svgFactory.createElement(this.svgElementName);
@@ -35013,12 +35013,12 @@ function requirePdf() {
                   const Ne = p.create(ve);
                   if (!Ne.isRenderable)
                     continue;
-                  const De = Ne.render();
-                  if (he.hidden && (De.style.visibility = "hidden"), Array.isArray(De))
-                    for (const je of De)
+                  const Oe = Ne.render();
+                  if (he.hidden && (Oe.style.visibility = "hidden"), Array.isArray(Oe))
+                    for (const je of Oe)
                       je.style.zIndex = ye++, h(Ce, Ce, we).call(Ce, je, he.id, H, fe);
                   else
-                    De.style.zIndex = ye++, Ne instanceof W ? H.prepend(De) : h(Ce, Ce, we).call(Ce, De, he.id, H, fe);
+                    Oe.style.zIndex = ye++, Ne instanceof W ? H.prepend(Oe) : h(Ce, Ce, we).call(Ce, Oe, he.id, H, fe);
                 }
                 h(this, Ce, Pe).call(this, H, F.annotationCanvasMap);
               }
@@ -36763,27 +36763,27 @@ function requirePdf() {
           }
           o.OutputScale = I;
           function M(ye, he) {
-            let Ne = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : !1, De = ye.offsetParent;
-            if (!De) {
+            let Ne = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : !1, Oe = ye.offsetParent;
+            if (!Oe) {
               console.error("offsetParent is not set -- cannot scroll");
               return;
             }
             let je = ye.offsetTop + ye.clientTop, Ye = ye.offsetLeft + ye.clientLeft;
-            for (; De.clientHeight === De.scrollHeight && De.clientWidth === De.scrollWidth || Ne && (De.classList.contains("markedContent") || getComputedStyle(De).overflow === "hidden"); )
-              if (je += De.offsetTop, Ye += De.offsetLeft, De = De.offsetParent, !De)
+            for (; Oe.clientHeight === Oe.scrollHeight && Oe.clientWidth === Oe.scrollWidth || Ne && (Oe.classList.contains("markedContent") || getComputedStyle(Oe).overflow === "hidden"); )
+              if (je += Oe.offsetTop, Ye += Oe.offsetLeft, Oe = Oe.offsetParent, !Oe)
                 return;
-            he && (he.top !== void 0 && (je += he.top), he.left !== void 0 && (Ye += he.left, De.scrollLeft = Ye)), De.scrollTop = je;
+            he && (he.top !== void 0 && (je += he.top), he.left !== void 0 && (Ye += he.left, Oe.scrollLeft = Ye)), Oe.scrollTop = je;
           }
           function $(ye, he) {
             const Ne = function(Ye) {
               je || (je = window.requestAnimationFrame(function() {
                 je = null;
-                const rt = ye.scrollLeft, ht = De.lastX;
-                rt !== ht && (De.right = rt > ht), De.lastX = rt;
-                const pt = ye.scrollTop, Ee = De.lastY;
-                pt !== Ee && (De.down = pt > Ee), De.lastY = pt, he(De);
+                const rt = ye.scrollLeft, ht = Oe.lastX;
+                rt !== ht && (Oe.right = rt > ht), Oe.lastX = rt;
+                const pt = ye.scrollTop, Ee = Oe.lastY;
+                pt !== Ee && (Oe.down = pt > Ee), Oe.lastY = pt, he(Oe);
               }));
-            }, De = {
+            }, Oe = {
               right: !0,
               down: !0,
               lastX: ye.scrollLeft,
@@ -36791,12 +36791,12 @@ function requirePdf() {
               _eventHandler: Ne
             };
             let je = null;
-            return ye.addEventListener("scroll", Ne, !0), De;
+            return ye.addEventListener("scroll", Ne, !0), Oe;
           }
           function Q(ye) {
             const he = /* @__PURE__ */ new Map();
-            for (const [Ne, De] of new URLSearchParams(ye))
-              he.set(Ne.toLowerCase(), De);
+            for (const [Ne, Oe] of new URLSearchParams(ye))
+              he.set(Ne.toLowerCase(), Oe);
             return he;
           }
           const q = /\x00/g, W = /[\x01-\x1F]/g;
@@ -36805,16 +36805,16 @@ function requirePdf() {
             return typeof ye != "string" ? (console.error("The argument must be a string."), ye) : (he && (ye = ye.replace(W, " ")), ye.replace(q, ""));
           }
           function Y(ye, he) {
-            let De = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : 0, je = ye.length - 1;
+            let Oe = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : 0, je = ye.length - 1;
             if (je < 0 || !he(ye[je]))
               return ye.length;
-            if (he(ye[De]))
-              return De;
-            for (; De < je; ) {
-              const Ye = De + je >> 1, et = ye[Ye];
-              he(et) ? je = Ye : De = Ye + 1;
+            if (he(ye[Oe]))
+              return Oe;
+            for (; Oe < je; ) {
+              const Ye = Oe + je >> 1, et = ye[Ye];
+              he(et) ? je = Ye : Oe = Ye + 1;
             }
-            return De;
+            return Oe;
           }
           function ee(ye) {
             if (Math.floor(ye) === ye)
@@ -36824,16 +36824,16 @@ function requirePdf() {
               return [1, Ne];
             if (Math.floor(he) === he)
               return [1, he];
-            const De = ye > 1 ? he : ye;
+            const Oe = ye > 1 ? he : ye;
             let je = 0, Ye = 1, et = 1, rt = 1;
             for (; ; ) {
               const pt = je + et, Ee = Ye + rt;
               if (Ee > Ne)
                 break;
-              De <= pt / Ee ? (et = pt, rt = Ee) : (je = pt, Ye = Ee);
+              Oe <= pt / Ee ? (et = pt, rt = Ee) : (je = pt, Ye = Ee);
             }
             let ht;
-            return De - je / Ye < et / rt - De ? ht = De === ye ? [je, Ye] : [Ye, je] : ht = De === ye ? [et, rt] : [rt, et], ht;
+            return Oe - je / Ye < et / rt - Oe ? ht = Oe === ye ? [je, Ye] : [Ye, je] : ht = Oe === ye ? [et, rt] : [rt, et], ht;
           }
           function pe(ye, he) {
             const Ne = ye % he;
@@ -36843,9 +36843,9 @@ function requirePdf() {
             let {
               view: he,
               userUnit: Ne,
-              rotate: De
+              rotate: Oe
             } = ye;
-            const [je, Ye, et, rt] = he, ht = De % 180 !== 0, pt = (et - je) / 72 * Ne, Ee = (rt - Ye) / 72 * Ne;
+            const [je, Ye, et, rt] = he, ht = Oe % 180 !== 0, pt = (et - je) / 72 * Ne, Ee = (rt - Ye) / 72 * Ne;
             return {
               width: ht ? Ee : pt,
               height: ht ? pt : Ee
@@ -36854,9 +36854,9 @@ function requirePdf() {
           function L(ye, he, Ne) {
             if (ye < 2)
               return ye;
-            let De = he[ye].div, je = De.offsetTop + De.clientTop;
-            je >= Ne && (De = he[ye - 1].div, je = De.offsetTop + De.clientTop);
-            for (let Ye = ye - 2; Ye >= 0 && (De = he[Ye].div, !(De.offsetTop + De.clientTop + De.clientHeight <= je)); --Ye)
+            let Oe = he[ye].div, je = Oe.offsetTop + Oe.clientTop;
+            je >= Ne && (Oe = he[ye - 1].div, je = Oe.offsetTop + Oe.clientTop);
+            for (let Ye = ye - 2; Ye >= 0 && (Oe = he[Ye].div, !(Oe.offsetTop + Oe.clientTop + Oe.clientHeight <= je)); --Ye)
               ye = Ye;
             return ye;
           }
@@ -36864,7 +36864,7 @@ function requirePdf() {
             let {
               scrollEl: he,
               views: Ne,
-              sortByVisibility: De = !1,
+              sortByVisibility: Oe = !1,
               horizontal: je = !1,
               rtl: Ye = !1
             } = ye;
@@ -36877,7 +36877,7 @@ function requirePdf() {
               const D = _e.div, xe = D.offsetLeft + D.clientLeft, it = xe + D.clientWidth;
               return Ye ? xe < pt : it > ht;
             }
-            const ce = [], Oe = /* @__PURE__ */ new Set(), Z = Ne.length;
+            const ce = [], De = /* @__PURE__ */ new Set(), Z = Ne.length;
             let ze = Y(Ne, je ? V : Ee);
             ze > 0 && ze < Z && !je && (ze = L(ze, Ne, et));
             let Ve = je ? pt : -1;
@@ -36897,17 +36897,17 @@ function requirePdf() {
                 view: D,
                 percent: ct,
                 widthPercent: Qe * 100 | 0
-              }), Oe.add(D.id);
+              }), De.add(D.id);
             }
             const ke = ce[0], de = ce.at(-1);
-            return De && ce.sort(function(_e, D) {
+            return Oe && ce.sort(function(_e, D) {
               const xe = _e.percent - D.percent;
               return Math.abs(xe) > 1e-3 ? -xe : _e.id - D.id;
             }), {
               first: ke,
               last: de,
               views: ce,
-              ids: Oe
+              ids: De
             };
           }
           function te(ye) {
@@ -36921,8 +36921,8 @@ function requirePdf() {
           function N(ye) {
             const he = ye.deltaMode;
             let Ne = O(ye);
-            const De = 30, je = 30;
-            return he === WheelEvent.DOM_DELTA_PIXEL ? Ne /= De * je : he === WheelEvent.DOM_DELTA_LINE && (Ne /= je), Ne;
+            const Oe = 30, je = 30;
+            return he === WheelEvent.DOM_DELTA_PIXEL ? Ne /= Oe * je : he === WheelEvent.DOM_DELTA_LINE && (Ne /= je), Ne;
           }
           function J(ye) {
             return Number.isInteger(ye) && ye % 90 === 0;
@@ -36967,8 +36967,8 @@ function requirePdf() {
             setWidth(he) {
               if (!he)
                 return;
-              const De = he.parentNode.offsetWidth - he.offsetWidth;
-              De > 0 && xt(this, fe).setProperty("--progressBar-end-offset", `${De}px`);
+              const Oe = he.parentNode.offsetWidth - he.offsetWidth;
+              Oe > 0 && xt(this, fe).setProperty("--progressBar-end-offset", `${Oe}px`);
             }
             setDisableAutoFetch() {
               let he = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : 5e3;
@@ -38135,7 +38135,7 @@ function requirePdf() {
             let Qe = (0, c.binarySearchFirstItem)(ae, (ct) => ct[0] >= He, Ze);
             return ae[Qe][0] > He && --Qe, [Se + ae[Ze][1], ie + ae[Qe][1] - ae[Ze][1]];
           }
-          var O = /* @__PURE__ */ new WeakMap(), N = /* @__PURE__ */ new WeakMap(), J = /* @__PURE__ */ new WeakSet(), oe = /* @__PURE__ */ new WeakSet(), ue = /* @__PURE__ */ new WeakMap(), me = /* @__PURE__ */ new WeakSet(), ne = /* @__PURE__ */ new WeakSet(), Ce = /* @__PURE__ */ new WeakSet(), we = /* @__PURE__ */ new WeakSet(), Pe = /* @__PURE__ */ new WeakSet(), Le = /* @__PURE__ */ new WeakSet(), Ae = /* @__PURE__ */ new WeakSet(), F = /* @__PURE__ */ new WeakSet(), U = /* @__PURE__ */ new WeakSet(), H = /* @__PURE__ */ new WeakSet(), se = /* @__PURE__ */ new WeakSet(), fe = /* @__PURE__ */ new WeakSet(), ve = /* @__PURE__ */ new WeakSet(), ye = /* @__PURE__ */ new WeakSet(), he = /* @__PURE__ */ new WeakSet(), Ne = /* @__PURE__ */ new WeakSet(), De = /* @__PURE__ */ new WeakSet();
+          var O = /* @__PURE__ */ new WeakMap(), N = /* @__PURE__ */ new WeakMap(), J = /* @__PURE__ */ new WeakSet(), oe = /* @__PURE__ */ new WeakSet(), ue = /* @__PURE__ */ new WeakMap(), me = /* @__PURE__ */ new WeakSet(), ne = /* @__PURE__ */ new WeakSet(), Ce = /* @__PURE__ */ new WeakSet(), we = /* @__PURE__ */ new WeakSet(), Pe = /* @__PURE__ */ new WeakSet(), Le = /* @__PURE__ */ new WeakSet(), Ae = /* @__PURE__ */ new WeakSet(), F = /* @__PURE__ */ new WeakSet(), U = /* @__PURE__ */ new WeakSet(), H = /* @__PURE__ */ new WeakSet(), se = /* @__PURE__ */ new WeakSet(), fe = /* @__PURE__ */ new WeakSet(), ve = /* @__PURE__ */ new WeakSet(), ye = /* @__PURE__ */ new WeakSet(), he = /* @__PURE__ */ new WeakSet(), Ne = /* @__PURE__ */ new WeakSet(), Oe = /* @__PURE__ */ new WeakSet();
           class je {
             constructor(R) {
               let {
@@ -38143,7 +38143,7 @@ function requirePdf() {
                 eventBus: Se,
                 updateMatchesCountOnProgress: He = !0
               } = R;
-              v(this, De), v(this, Ne), v(this, he), v(this, ye), v(this, ve), v(this, fe), v(this, se), v(this, H), v(this, U), v(this, F), v(this, Ae), v(this, Le), v(this, Pe), v(this, we), v(this, Ce), v(this, ne), v(this, me), _(this, ue, {
+              v(this, Oe), v(this, Ne), v(this, he), v(this, ye), v(this, ve), v(this, fe), v(this, se), v(this, H), v(this, U), v(this, F), v(this, Ae), v(this, Le), v(this, Pe), v(this, we), v(this, Ce), v(this, ne), v(this, me), _(this, ue, {
                 get: rt,
                 set: void 0
               }), v(this, oe), v(this, J), _(this, O, {
@@ -38200,10 +38200,10 @@ function requirePdf() {
             const R = this._pdfDocument, {
               type: ie
             } = ae;
-            (this._state === null || p(this, me, ht).call(this, ae)) && (this._dirtyMatch = !0), this._state = ae, ie !== "highlightallchange" && p(this, De, We).call(this, f.PENDING), this._firstPageCapability.promise.then(() => {
+            (this._state === null || p(this, me, ht).call(this, ae)) && (this._dirtyMatch = !0), this._state = ae, ie !== "highlightallchange" && p(this, Oe, We).call(this, f.PENDING), this._firstPageCapability.promise.then(() => {
               if (!this._pdfDocument || R && this._pdfDocument !== R)
                 return;
-              p(this, Le, Oe).call(this);
+              p(this, Le, De).call(this);
               const Se = !this._highlightMatches, He = !!this._findTimeout;
               this._findTimeout && (clearTimeout(this._findTimeout), this._findTimeout = null), ie ? this._dirtyMatch ? p(this, U, Ve).call(this) : ie === "again" ? (p(this, U, Ve).call(this), Se && this._state.highlightAll && p(this, F, ze).call(this)) : ie === "highlightallchange" ? (He ? p(this, U, Ve).call(this) : this._highlightMatches = !0, p(this, F, ze).call(this)) : p(this, U, Ve).call(this) : this._findTimeout = setTimeout(() => {
                 p(this, U, Ve).call(this), this._findTimeout = null;
@@ -38296,7 +38296,7 @@ function requirePdf() {
             const Te = this._pageMatches[ae].length;
             this._matchesCountTotal += Te, y(this, O) ? Te > 0 && p(this, Ne, k).call(this) : w(this, N, (R = y(this, N), ++R)) === this._linkService.pagesCount && p(this, Ne, k).call(this);
           }
-          function Oe() {
+          function De() {
             if (this._extractTextPromises.length > 0)
               return;
             let ae = Promise.resolve();
@@ -38335,7 +38335,7 @@ function requirePdf() {
                 }));
             }
             if (!y(this, ue)) {
-              p(this, De, We).call(this, f.FOUND);
+              p(this, Oe, We).call(this, f.FOUND);
               return;
             }
             if (this._resumePageIdx)
@@ -38377,12 +38377,12 @@ function requirePdf() {
               const Se = this._selected.pageIdx;
               this._selected.pageIdx = this._offset.pageIdx, this._selected.matchIdx = this._offset.matchIdx, R = ie ? f.WRAPPED : f.FOUND, Se !== -1 && Se !== this._selected.pageIdx && p(this, Ae, Z).call(this, Se);
             }
-            p(this, De, We).call(this, R, this._state.findPrevious), this._selected.pageIdx !== -1 && (this._scrollMatches = !0, p(this, Ae, Z).call(this, this._selected.pageIdx));
+            p(this, Oe, We).call(this, R, this._state.findPrevious), this._selected.pageIdx !== -1 && (this._scrollMatches = !0, p(this, Ae, Z).call(this, this._selected.pageIdx));
           }
           function xe(ae) {
             const R = this._pdfDocument;
             this._firstPageCapability.promise.then(() => {
-              !this._pdfDocument || R && this._pdfDocument !== R || (this._findTimeout && (clearTimeout(this._findTimeout), this._findTimeout = null), this._resumePageIdx && (this._resumePageIdx = null, this._dirtyMatch = !0), p(this, De, We).call(this, f.FOUND), this._highlightMatches = !1, p(this, F, ze).call(this));
+              !this._pdfDocument || R && this._pdfDocument !== R || (this._findTimeout && (clearTimeout(this._findTimeout), this._findTimeout = null), this._resumePageIdx && (this._resumePageIdx = null, this._dirtyMatch = !0), p(this, Oe, We).call(this, f.FOUND), this._highlightMatches = !1, p(this, F, ze).call(this));
             });
           }
           function it() {
@@ -38921,19 +38921,19 @@ function requirePdf() {
               let {
                 keepZoomLayer: he = !1,
                 keepAnnotationLayer: Ne = !1,
-                keepAnnotationEditorLayer: De = !1,
+                keepAnnotationEditorLayer: Oe = !1,
                 keepXfaLayer: je = !1,
                 keepTextLayer: Ye = !1
               } = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
               this.cancelRendering({
                 keepAnnotationLayer: Ne,
-                keepAnnotationEditorLayer: De,
+                keepAnnotationEditorLayer: Oe,
                 keepXfaLayer: je,
                 keepTextLayer: Ye
               }), this.renderingState = u.RenderingStates.INITIAL;
-              const et = this.div, rt = et.childNodes, ht = he && this.zoomLayer || null, pt = Ne && ((H = this.annotationLayer) === null || H === void 0 ? void 0 : H.div) || null, Ee = De && ((se = this.annotationEditorLayer) === null || se === void 0 ? void 0 : se.div) || null, V = je && ((fe = this.xfaLayer) === null || fe === void 0 ? void 0 : fe.div) || null, ce = Ye && ((ve = this.textLayer) === null || ve === void 0 ? void 0 : ve.div) || null;
-              for (let Oe = rt.length - 1; Oe >= 0; Oe--) {
-                const Z = rt[Oe];
+              const et = this.div, rt = et.childNodes, ht = he && this.zoomLayer || null, pt = Ne && ((H = this.annotationLayer) === null || H === void 0 ? void 0 : H.div) || null, Ee = Oe && ((se = this.annotationEditorLayer) === null || se === void 0 ? void 0 : se.div) || null, V = je && ((fe = this.xfaLayer) === null || fe === void 0 ? void 0 : fe.div) || null, ce = Ye && ((ve = this.textLayer) === null || ve === void 0 ? void 0 : ve.div) || null;
+              for (let De = rt.length - 1; De >= 0; De--) {
+                const Z = rt[De];
                 switch (Z) {
                   case ht:
                   case pt:
@@ -38980,14 +38980,14 @@ function requirePdf() {
                 });
                 return;
               }
-              let De = !1;
+              let Oe = !1;
               if (this.canvas && this.maxCanvasPixels > 0) {
                 const Ye = this.outputScale;
-                (Math.floor(this.viewport.width) * Ye.sx | 0) * (Math.floor(this.viewport.height) * Ye.sy | 0) > this.maxCanvasPixels && (De = !0);
+                (Math.floor(this.viewport.width) * Ye.sx | 0) * (Math.floor(this.viewport.height) * Ye.sy | 0) > this.maxCanvasPixels && (Oe = !0);
               }
               const je = ye >= 0 && ye < 1e3;
               if (this.canvas) {
-                if (je || this.useOnlyCssZoom || this.hasRestrictedScaling && De) {
+                if (je || this.useOnlyCssZoom || this.hasRestrictedScaling && Oe) {
                   je && this.renderingState !== u.RenderingStates.FINISHED && (this.cancelRendering({
                     keepZoomLayer: !0,
                     keepAnnotationLayer: !0,
@@ -39060,9 +39060,9 @@ function requirePdf() {
                 } = this.viewport;
                 se.style.width = se.parentNode.style.width = Ye.style.width = Math.floor(et) + "px", se.style.height = se.parentNode.style.height = Ye.style.height = Math.floor(rt) + "px";
               }
-              const De = this.paintedViewportMap.get(se);
-              if (this.viewport !== De) {
-                const Ye = this.viewport.rotation - De.rotation, et = Math.abs(Ye);
+              const Oe = this.paintedViewportMap.get(se);
+              if (this.viewport !== Oe) {
+                const Ye = this.viewport.rotation - Oe.rotation, et = Math.abs(Ye);
                 let rt = 1, ht = 1;
                 if (et === 90 || et === 270) {
                   const {
@@ -39154,7 +39154,7 @@ function requirePdf() {
                   throw je;
               }, Ne = this.renderer === u.RendererType.SVG ? this.paintOnSvg(ve) : this.paintOnCanvas(ve);
               Ne.onRenderContinue = ye, this.paintTask = Ne;
-              const De = Ne.promise.then(() => he(null).then(async () => {
+              const Oe = Ne.promise.then(() => he(null).then(async () => {
                 if (I(this, J, Le).call(this), this.annotationLayer && await I(this, te, Ce).call(this), !this.annotationEditorLayer) {
                   const {
                     annotationEditorUIManager: je
@@ -39193,17 +39193,17 @@ function requirePdf() {
               return se.setAttribute("data-loaded", !0), this.eventBus.dispatch("pagerender", {
                 source: this,
                 pageNumber: this.id
-              }), De;
+              }), Oe;
             }
             paintOnCanvas(H) {
               const se = (0, c.createPromiseCapability)(), fe = {
                 promise: se.promise,
-                onRenderContinue(Oe) {
-                  Oe();
+                onRenderContinue(De) {
+                  De();
                 },
                 cancel() {
-                  let Oe = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : 0;
-                  ce.cancel(Oe);
+                  let De = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : 0;
+                  ce.cancel(De);
                 },
                 get separateAnnots() {
                   return ce.separateAnnots;
@@ -39213,22 +39213,22 @@ function requirePdf() {
                 height: he
               } = ve, Ne = document.createElement("canvas");
               Ne.setAttribute("role", "presentation"), Ne.hidden = !0;
-              let De = !0;
+              let Oe = !0;
               const je = function() {
-                De && (Ne.hidden = !1, De = !1);
+                Oe && (Ne.hidden = !1, Oe = !1);
               };
               H.append(Ne), this.canvas = Ne;
               const Ye = Ne.getContext("2d", {
                 alpha: !1
               }), et = this.outputScale = new u.OutputScale();
               if (this.useOnlyCssZoom) {
-                const Oe = ve.clone({
+                const De = ve.clone({
                   scale: c.PixelsPerInch.PDF_TO_CSS_UNITS
                 });
-                et.sx *= Oe.width / ye, et.sy *= Oe.height / he;
+                et.sx *= De.width / ye, et.sy *= De.height / he;
               }
               if (this.maxCanvasPixels > 0) {
-                const Oe = ye * he, Z = Math.sqrt(this.maxCanvasPixels / Oe);
+                const De = ye * he, Z = Math.sqrt(this.maxCanvasPixels / De);
                 et.sx > Z || et.sy > Z ? (et.sx = Z, et.sy = Z, this.hasRestrictedScaling = !0) : this.hasRestrictedScaling = !1;
               }
               const rt = (0, u.approximateFraction)(et.sx), ht = (0, u.approximateFraction)(et.sy);
@@ -39246,12 +39246,12 @@ function requirePdf() {
                 annotationCanvasMap: this._annotationCanvasMap,
                 pageColors: this.pageColors
               }, ce = this.pdfPage.render(V);
-              return ce.onContinue = function(Oe) {
-                je(), fe.onRenderContinue ? fe.onRenderContinue(Oe) : Oe();
+              return ce.onContinue = function(De) {
+                je(), fe.onRenderContinue ? fe.onRenderContinue(De) : De();
               }, ce.promise.then(function() {
                 je(), se.resolve();
-              }, function(Oe) {
-                Oe instanceof c.RenderingCancelledException || je(), se.reject(Oe);
+              }, function(De) {
+                De instanceof c.RenderingCancelledException || je(), se.reject(De);
               }), fe;
             }
             paintOnSvg(H) {
@@ -40767,8 +40767,8 @@ function requirePdf() {
             return V.get ? V.get.call(Ee) : V.value;
           }
           function C(Ee, V, ce) {
-            var Oe = x(Ee, V, "set");
-            return P(Ee, Oe, ce), ce;
+            var De = x(Ee, V, "set");
+            return P(Ee, De, ce), ce;
           }
           function x(Ee, V, ce) {
             if (!V.has(Ee))
@@ -40812,15 +40812,15 @@ function requirePdf() {
             resize(V) {
               let ce = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : null;
               C(this, q, V);
-              const Oe = S(this, Q);
+              const De = S(this, Q);
               if (ce) {
-                const Z = Oe.size;
+                const Z = De.size;
                 let ze = 1;
-                for (const Ve of Oe)
-                  if (ce.has(Ve.id) && (Oe.delete(Ve), Oe.add(Ve)), ++ze > Z)
+                for (const Ve of De)
+                  if (ce.has(Ve.id) && (De.delete(Ve), De.add(Ve)), ++ze > Z)
                     break;
               }
-              for (; Oe.size > S(this, q); )
+              for (; De.size > S(this, q); )
                 E(this, W, Y).call(this);
             }
             has(V) {
@@ -40838,7 +40838,7 @@ function requirePdf() {
           var ee = /* @__PURE__ */ new WeakMap(), pe = /* @__PURE__ */ new WeakMap(), re = /* @__PURE__ */ new WeakMap(), L = /* @__PURE__ */ new WeakMap(), G = /* @__PURE__ */ new WeakMap(), te = /* @__PURE__ */ new WeakMap(), O = /* @__PURE__ */ new WeakMap(), N = /* @__PURE__ */ new WeakMap(), J = /* @__PURE__ */ new WeakMap(), oe = /* @__PURE__ */ new WeakMap(), ue = /* @__PURE__ */ new WeakMap(), me = /* @__PURE__ */ new WeakSet(), ne = /* @__PURE__ */ new WeakSet(), Ce = /* @__PURE__ */ new WeakSet(), we = /* @__PURE__ */ new WeakSet(), Pe = /* @__PURE__ */ new WeakSet(), Le = /* @__PURE__ */ new WeakSet(), Ae = /* @__PURE__ */ new WeakSet(), F = /* @__PURE__ */ new WeakSet(), U = /* @__PURE__ */ new WeakSet(), H = /* @__PURE__ */ new WeakSet(), se = /* @__PURE__ */ new WeakSet();
           class fe {
             constructor(V) {
-              var ce, Oe;
+              var ce, De;
               d(this, se), d(this, H), d(this, U), d(this, F), d(this, Ae), d(this, Le), d(this, Pe), d(this, we), d(this, Ce), d(this, ne), d(this, me), p(this, ee, {
                 writable: !0,
                 value: null
@@ -40876,7 +40876,7 @@ function requirePdf() {
               const Z = "3.4.120";
               if (c.version !== Z)
                 throw new Error(`The API version "${c.version}" does not match the Viewer version "${Z}".`);
-              if (this.container = V.container, this.viewer = V.viewer || V.container.firstElementChild, ((ce = this.container) === null || ce === void 0 ? void 0 : ce.tagName) !== "DIV" || ((Oe = this.viewer) === null || Oe === void 0 ? void 0 : Oe.tagName) !== "DIV")
+              if (this.container = V.container, this.viewer = V.viewer || V.container.firstElementChild, ((ce = this.container) === null || ce === void 0 ? void 0 : ce.tagName) !== "DIV" || ((De = this.viewer) === null || De === void 0 ? void 0 : De.tagName) !== "DIV")
                 throw new Error("Invalid `container` and/or `viewer` option.");
               if (this.container.offsetParent && getComputedStyle(this.container).position !== "absolute")
                 throw new Error("The `container` must be absolutely positioned.");
@@ -40909,9 +40909,9 @@ function requirePdf() {
             }
             _setCurrentPageNumber(V) {
               var ce;
-              let Oe = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !1;
+              let De = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !1;
               if (this._currentPageNumber === V)
-                return Oe && E(this, Ae, Ye).call(this), !0;
+                return De && E(this, Ae, Ye).call(this), !0;
               if (!(0 < V && V <= this.pagesCount))
                 return !1;
               const Z = this._currentPageNumber;
@@ -40920,7 +40920,7 @@ function requirePdf() {
                 pageNumber: V,
                 pageLabel: ((ce = this._pageLabels) === null || ce === void 0 ? void 0 : ce[V - 1]) ?? null,
                 previous: Z
-              }), Oe && E(this, Ae, Ye).call(this), !0;
+              }), De && E(this, Ae, Ye).call(this), !0;
             }
             get currentPageLabel() {
               var V;
@@ -40931,8 +40931,8 @@ function requirePdf() {
                 return;
               let ce = V | 0;
               if (this._pageLabels) {
-                const Oe = this._pageLabels.indexOf(V);
-                Oe >= 0 && (ce = Oe + 1);
+                const De = this._pageLabels.indexOf(V);
+                De >= 0 && (ce = De + 1);
               }
               this._setCurrentPageNumber(ce, !0) || console.error(`currentPageLabel: "${V}" is not a valid page.`);
             }
@@ -40985,10 +40985,10 @@ function requirePdf() {
             }
             setDocument(V) {
               if (this.pdfDocument) {
-                var ce, Oe;
+                var ce, De;
                 this.eventBus.dispatch("pagesdestroy", {
                   source: this
-                }), this._cancelRendering(), this._resetView(), (ce = this.findController) === null || ce === void 0 || ce.setDocument(null), (Oe = this._scriptingManager) === null || Oe === void 0 || Oe.setDocument(null), S(this, re) && (S(this, re).destroy(), C(this, re, null));
+                }), this._cancelRendering(), this._resetView(), (ce = this.findController) === null || ce === void 0 || ce.setDocument(null), (De = this._scriptingManager) === null || De === void 0 || De.setDocument(null), S(this, re) && (S(this, re).destroy(), C(this, re, null));
               }
               if (this.pdfDocument = V, !V)
                 return;
@@ -41093,9 +41093,9 @@ function requirePdf() {
             setPageLabels(V) {
               if (this.pdfDocument) {
                 V ? Array.isArray(V) && this.pdfDocument.numPages === V.length ? this._pageLabels = V : (this._pageLabels = null, console.error("setPageLabels: Invalid page labels.")) : this._pageLabels = null;
-                for (let Oe = 0, Z = this._pages.length; Oe < Z; Oe++) {
+                for (let De = 0, Z = this._pages.length; De < Z; De++) {
                   var ce;
-                  this._pages[Oe].setPageLabel(((ce = this._pageLabels) === null || ce === void 0 ? void 0 : ce[Oe]) ?? null);
+                  this._pages[De].setPageLabel(((ce = this._pageLabels) === null || ce === void 0 ? void 0 : ce[De]) ?? null);
                 }
               }
             }
@@ -41109,12 +41109,12 @@ function requirePdf() {
             _scrollUpdate() {
               this.pagesCount !== 0 && this.update();
             }
-            _setScaleUpdatePages(V, ce, Oe) {
+            _setScaleUpdatePages(V, ce, De) {
               let {
                 noScroll: Z = !1,
                 preset: ze = !1,
                 drawingDelay: Ve = -1
-              } = Oe;
+              } = De;
               if (this._currentScaleValue = ce.toString(), E(this, Le, je).call(this, V)) {
                 ze && this.eventBus.dispatch("scalechanging", {
                   source: this,
@@ -41150,9 +41150,9 @@ function requirePdf() {
               return this._spreadMode !== u.SpreadMode.NONE && this._scrollMode !== u.ScrollMode.HORIZONTAL ? 2 : 1;
             }
             _setScale(V, ce) {
-              let Oe = parseFloat(V);
-              if (Oe > 0)
-                ce.preset = !1, this._setScaleUpdatePages(Oe, V, ce);
+              let De = parseFloat(V);
+              if (De > 0)
+                ce.preset = !1, this._setScaleUpdatePages(De, V, ce);
               else {
                 const Z = this._pages[this._currentPageNumber - 1];
                 if (!Z)
@@ -41162,26 +41162,26 @@ function requirePdf() {
                 const ke = (this.container.clientWidth - ze) / Z.width * Z.scale / this._pageWidthScaleFactor, de = (this.container.clientHeight - Ve) / Z.height * Z.scale;
                 switch (V) {
                   case "page-actual":
-                    Oe = 1;
+                    De = 1;
                     break;
                   case "page-width":
-                    Oe = ke;
+                    De = ke;
                     break;
                   case "page-height":
-                    Oe = de;
+                    De = de;
                     break;
                   case "page-fit":
-                    Oe = Math.min(ke, de);
+                    De = Math.min(ke, de);
                     break;
                   case "auto":
                     const _e = (0, u.isPortraitOrientation)(Z) ? ke : Math.min(de, ke);
-                    Oe = Math.min(u.MAX_AUTO_SCALE, _e);
+                    De = Math.min(u.MAX_AUTO_SCALE, _e);
                     break;
                   default:
                     console.error(`_setScale: "${V}" is an unknown zoom value.`);
                     return;
                 }
-                ce.preset = !0, this._setScaleUpdatePages(Oe, V, ce);
+                ce.preset = !0, this._setScaleUpdatePages(De, V, ce);
               }
             }
             pageLabelToPageNumber(V) {
@@ -41193,7 +41193,7 @@ function requirePdf() {
             scrollPageIntoView(V) {
               let {
                 pageNumber: ce,
-                destArray: Oe = null,
+                destArray: De = null,
                 allowNegativeOffset: Z = !1,
                 ignoreDestinationZoom: ze = !1
               } = V;
@@ -41204,16 +41204,16 @@ function requirePdf() {
                 console.error(`scrollPageIntoView: "${ce}" is not a valid pageNumber parameter.`);
                 return;
               }
-              if (this.isInPresentationMode || !Oe) {
+              if (this.isInPresentationMode || !De) {
                 this._setCurrentPageNumber(ce, !0);
                 return;
               }
               let ke = 0, de = 0, _e = 0, D = 0, xe, it;
               const k = Ve.rotation % 180 !== 0, We = (k ? Ve.height : Ve.width) / Ve.scale / c.PixelsPerInch.PDF_TO_CSS_UNITS, ae = (k ? Ve.width : Ve.height) / Ve.scale / c.PixelsPerInch.PDF_TO_CSS_UNITS;
               let R = 0;
-              switch (Oe[1].name) {
+              switch (De[1].name) {
                 case "XYZ":
-                  ke = Oe[2], de = Oe[3], R = Oe[4], ke = ke !== null ? ke : 0, de = de !== null ? de : ae;
+                  ke = De[2], de = De[3], R = De[4], ke = ke !== null ? ke : 0, de = de !== null ? de : ae;
                   break;
                 case "Fit":
                 case "FitB":
@@ -41221,34 +41221,34 @@ function requirePdf() {
                   break;
                 case "FitH":
                 case "FitBH":
-                  de = Oe[2], R = "page-width", de === null && this._location ? (ke = this._location.left, de = this._location.top) : (typeof de != "number" || de < 0) && (de = ae);
+                  de = De[2], R = "page-width", de === null && this._location ? (ke = this._location.left, de = this._location.top) : (typeof de != "number" || de < 0) && (de = ae);
                   break;
                 case "FitV":
                 case "FitBV":
-                  ke = Oe[2], _e = We, D = ae, R = "page-height";
+                  ke = De[2], _e = We, D = ae, R = "page-height";
                   break;
                 case "FitR":
-                  ke = Oe[2], de = Oe[3], _e = Oe[4] - ke, D = Oe[5] - de;
+                  ke = De[2], de = De[3], _e = De[4] - ke, D = De[5] - de;
                   let Ze = u.SCROLLBAR_PADDING, Qe = u.VERTICAL_PADDING;
                   this.removePageBorders && (Ze = Qe = 0), xe = (this.container.clientWidth - Ze) / _e / c.PixelsPerInch.PDF_TO_CSS_UNITS, it = (this.container.clientHeight - Qe) / D / c.PixelsPerInch.PDF_TO_CSS_UNITS, R = Math.min(Math.abs(xe), Math.abs(it));
                   break;
                 default:
-                  console.error(`scrollPageIntoView: "${Oe[1].name}" is not a valid destination type.`);
+                  console.error(`scrollPageIntoView: "${De[1].name}" is not a valid destination type.`);
                   return;
               }
-              if (ze || (R && R !== this._currentScale ? this.currentScaleValue = R : this._currentScale === u.UNKNOWN_SCALE && (this.currentScaleValue = u.DEFAULT_SCALE_VALUE)), R === "page-fit" && !Oe[4]) {
-                E(this, Pe, De).call(this, Ve);
+              if (ze || (R && R !== this._currentScale ? this.currentScaleValue = R : this._currentScale === u.UNKNOWN_SCALE && (this.currentScaleValue = u.DEFAULT_SCALE_VALUE)), R === "page-fit" && !De[4]) {
+                E(this, Pe, Oe).call(this, Ve);
                 return;
               }
               const ie = [Ve.viewport.convertToViewportPoint(ke, de), Ve.viewport.convertToViewportPoint(ke + _e, de + D)];
               let Se = Math.min(ie[0][0], ie[1][0]), He = Math.min(ie[0][1], ie[1][1]);
-              Z || (Se = Math.max(Se, 0), He = Math.max(He, 0)), E(this, Pe, De).call(this, Ve, {
+              Z || (Se = Math.max(Se, 0), He = Math.max(He, 0)), E(this, Pe, Oe).call(this, Ve, {
                 left: Se,
                 top: He
               });
             }
             _updateLocation(V) {
-              const ce = this._currentScale, Oe = this._currentScaleValue, Z = parseFloat(Oe) === ce ? Math.round(ce * 1e4) / 100 : Oe, ze = V.id, Ve = this._pages[ze - 1], ke = this.container, de = Ve.getPagePoint(ke.scrollLeft - V.x, ke.scrollTop - V.y), _e = Math.round(de[0]), D = Math.round(de[1]);
+              const ce = this._currentScale, De = this._currentScaleValue, Z = parseFloat(De) === ce ? Math.round(ce * 1e4) / 100 : De, ze = V.id, Ve = this._pages[ze - 1], ke = this.container, de = Ve.getPagePoint(ke.scrollLeft - V.x, ke.scrollTop - V.y), _e = Math.round(de[0]), D = Math.round(de[1]);
               let xe = `#page=${ze}`;
               this.isInPresentationMode || (xe += `&zoom=${Z},${_e},${D}`), this._location = {
                 pageNumber: ze,
@@ -41260,10 +41260,10 @@ function requirePdf() {
               };
             }
             update() {
-              const V = this._getVisiblePages(), ce = V.views, Oe = ce.length;
-              if (Oe === 0)
+              const V = this._getVisiblePages(), ce = V.views, De = ce.length;
+              if (De === 0)
                 return;
-              const Z = Math.max(T, 2 * Oe + 1);
+              const Z = Math.max(T, 2 * De + 1);
               S(this, ee).resize(Z, V.ids), this.renderingQueue.renderHighestPriority(V);
               const ze = this._spreadMode === u.SpreadMode.NONE && (this._scrollMode === u.ScrollMode.PAGE || this._scrollMode === u.ScrollMode.VERTICAL), Ve = this._currentPageNumber;
               let ke = !1;
@@ -41302,13 +41302,13 @@ function requirePdf() {
               return this.isInPresentationMode ? !1 : this.container.scrollHeight > this.container.clientHeight;
             }
             _getVisiblePages() {
-              const V = this._scrollMode === u.ScrollMode.PAGE ? S(this, J).pages : this._pages, ce = this._scrollMode === u.ScrollMode.HORIZONTAL, Oe = ce && this._isContainerRtl;
+              const V = this._scrollMode === u.ScrollMode.PAGE ? S(this, J).pages : this._pages, ce = this._scrollMode === u.ScrollMode.HORIZONTAL, De = ce && this._isContainerRtl;
               return (0, u.getVisibleElements)({
                 scrollEl: this.container,
                 views: V,
                 sortByVisibility: !0,
                 horizontal: ce,
-                rtl: Oe
+                rtl: De
               });
             }
             isPageVisible(V) {
@@ -41331,14 +41331,14 @@ function requirePdf() {
                 V.cancelRendering();
             }
             forceRendering(V) {
-              const ce = V || this._getVisiblePages(), Oe = E(this, U, rt).call(this, ce), Z = this._spreadMode !== u.SpreadMode.NONE && this._scrollMode !== u.ScrollMode.HORIZONTAL, ze = this.renderingQueue.getHighestPriority(ce, this._pages, Oe, Z);
+              const ce = V || this._getVisiblePages(), De = E(this, U, rt).call(this, ce), Z = this._spreadMode !== u.SpreadMode.NONE && this._scrollMode !== u.ScrollMode.HORIZONTAL, ze = this.renderingQueue.getHighestPriority(ce, this._pages, De, Z);
               return ze ? (E(this, F, et).call(this, ze).then(() => {
                 this.renderingQueue.renderView(ze);
               }), !0) : !1;
             }
             get hasEqualPageSizes() {
               const V = this._pages[0];
-              for (let ce = 1, Oe = this._pages.length; ce < Oe; ++ce) {
+              for (let ce = 1, De = this._pages.length; ce < De; ++ce) {
                 const Z = this._pages[ce];
                 if (Z.width !== V.width || Z.height !== V.height)
                   return !1;
@@ -41389,8 +41389,8 @@ function requirePdf() {
             }
             _updateScrollMode() {
               let V = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : null;
-              const ce = this._scrollMode, Oe = this.viewer;
-              Oe.classList.toggle("scrollHorizontal", ce === u.ScrollMode.HORIZONTAL), Oe.classList.toggle("scrollWrapped", ce === u.ScrollMode.WRAPPED), !(!this.pdfDocument || !V) && (ce === u.ScrollMode.PAGE ? E(this, we, Ne).call(this) : this._previousScrollMode === u.ScrollMode.PAGE && this._updateSpreadMode(), this._currentScaleValue && isNaN(this._currentScaleValue) && this._setScale(this._currentScaleValue, {
+              const ce = this._scrollMode, De = this.viewer;
+              De.classList.toggle("scrollHorizontal", ce === u.ScrollMode.HORIZONTAL), De.classList.toggle("scrollWrapped", ce === u.ScrollMode.WRAPPED), !(!this.pdfDocument || !V) && (ce === u.ScrollMode.PAGE ? E(this, we, Ne).call(this) : this._previousScrollMode === u.ScrollMode.PAGE && this._updateSpreadMode(), this._currentScaleValue && isNaN(this._currentScaleValue) && this._setScale(this._currentScaleValue, {
                 noScroll: !0
               }), this._setCurrentPageNumber(V, !0), this.update());
             }
@@ -41411,7 +41411,7 @@ function requirePdf() {
               let V = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : null;
               if (!this.pdfDocument)
                 return;
-              const ce = this.viewer, Oe = this._pages;
+              const ce = this.viewer, De = this._pages;
               if (this._scrollMode === u.ScrollMode.PAGE)
                 E(this, we, Ne).call(this);
               else if (ce.textContent = "", this._spreadMode === u.SpreadMode.NONE)
@@ -41420,8 +41420,8 @@ function requirePdf() {
               else {
                 const Z = this._spreadMode - 1;
                 let ze = null;
-                for (let Ve = 0, ke = Oe.length; Ve < ke; ++Ve)
-                  ze === null ? (ze = document.createElement("div"), ze.className = "spread", ce.append(ze)) : Ve % 2 === Z && (ze = ze.cloneNode(!1), ce.append(ze)), ze.append(Oe[Ve].div);
+                for (let Ve = 0, ke = De.length; Ve < ke; ++Ve)
+                  ze === null ? (ze = document.createElement("div"), ze.className = "spread", ce.append(ze)) : Ve % 2 === Z && (ze = ze.cloneNode(!1), ce.append(ze)), ze.append(De[Ve].div);
               }
               V && (this._currentScaleValue && isNaN(this._currentScaleValue) && this._setScale(this._currentScaleValue, {
                 noScroll: !0
@@ -41432,14 +41432,14 @@ function requirePdf() {
               switch (this._scrollMode) {
                 case u.ScrollMode.WRAPPED: {
                   const {
-                    views: Oe
+                    views: De
                   } = this._getVisiblePages(), Z = /* @__PURE__ */ new Map();
                   for (const {
                     id: ze,
                     y: Ve,
                     percent: ke,
                     widthPercent: de
-                  } of Oe) {
+                  } of De) {
                     if (ke === 0 || de < 100)
                       continue;
                     let _e = Z.get(Ve);
@@ -41483,10 +41483,10 @@ function requirePdf() {
                 case u.ScrollMode.VERTICAL: {
                   if (this._spreadMode === u.SpreadMode.NONE)
                     break;
-                  const Oe = this._spreadMode - 1;
-                  if (ce && V % 2 !== Oe)
+                  const De = this._spreadMode - 1;
+                  if (ce && V % 2 !== De)
                     break;
-                  if (!ce && V % 2 === Oe)
+                  if (!ce && V % 2 === De)
                     break;
                   const {
                     views: Z
@@ -41510,8 +41510,8 @@ function requirePdf() {
               const V = this._currentPageNumber, ce = this.pagesCount;
               if (V >= ce)
                 return !1;
-              const Oe = this._getPageAdvance(V, !1) || 1;
-              return this.currentPageNumber = Math.min(V + Oe, ce), !0;
+              const De = this._getPageAdvance(V, !1) || 1;
+              return this.currentPageNumber = Math.min(V + De, ce), !0;
             }
             previousPage() {
               const V = this._currentPageNumber;
@@ -41531,10 +41531,10 @@ function requirePdf() {
               if (V.scaleFactor > 1)
                 ce = Math.min(u.MAX_SCALE, Math.round(ce * V.scaleFactor * 100) / 100);
               else {
-                let Oe = V.steps ?? 1;
+                let De = V.steps ?? 1;
                 do
                   ce = (ce * u.DEFAULT_SCALE_DELTA).toFixed(2), ce = Math.ceil(ce * 10) / 10, ce = Math.min(u.MAX_SCALE, ce);
-                while (--Oe > 0 && ce < u.MAX_SCALE);
+                while (--De > 0 && ce < u.MAX_SCALE);
               }
               V.noScroll = !1, this._setScale(ce, V);
             }
@@ -41549,10 +41549,10 @@ function requirePdf() {
               if (V.scaleFactor > 0 && V.scaleFactor < 1)
                 ce = Math.max(u.MIN_SCALE, Math.round(ce * V.scaleFactor * 100) / 100);
               else {
-                let Oe = V.steps ?? 1;
+                let De = V.steps ?? 1;
                 do
                   ce = (ce / u.DEFAULT_SCALE_DELTA).toFixed(2), ce = Math.floor(ce * 10) / 10, ce = Math.max(u.MIN_SCALE, ce);
-                while (--Oe > 0 && ce > u.MIN_SCALE);
+                while (--De > 0 && ce > u.MIN_SCALE);
               }
               V.noScroll = !1, this._setScale(ce, V);
             }
@@ -41577,17 +41577,17 @@ function requirePdf() {
             set annotationEditorParams(V) {
               let {
                 type: ce,
-                value: Oe
+                value: De
               } = V;
               if (!S(this, re))
                 throw new Error("The AnnotationEditor is not enabled.");
-              S(this, re).updateParams(ce, Oe);
+              S(this, re).updateParams(ce, De);
             }
             refresh() {
               let V = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !1, ce = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : /* @__PURE__ */ Object.create(null);
               if (this.pdfDocument) {
-                for (const Oe of this._pages)
-                  Oe.update(ce);
+                for (const De of this._pages)
+                  De.update(ce);
                 S(this, ue) !== null && (clearTimeout(S(this, ue)), C(this, ue, null)), V || this.update();
               }
             }
@@ -41648,17 +41648,17 @@ function requirePdf() {
               throw new Error("#ensurePageViewVisible: Invalid scrollMode value.");
             const Ee = this._currentPageNumber, V = S(this, J), ce = this.viewer;
             if (ce.textContent = "", V.pages.length = 0, this._spreadMode === u.SpreadMode.NONE && !this.isInPresentationMode) {
-              const Oe = this._pages[Ee - 1];
-              ce.append(Oe.div), V.pages.push(Oe);
+              const De = this._pages[Ee - 1];
+              ce.append(De.div), V.pages.push(De);
             } else {
-              const Oe = /* @__PURE__ */ new Set(), Z = this._spreadMode - 1;
-              Z === -1 ? Oe.add(Ee - 1) : Ee % 2 !== Z ? (Oe.add(Ee - 1), Oe.add(Ee)) : (Oe.add(Ee - 2), Oe.add(Ee - 1));
+              const De = /* @__PURE__ */ new Set(), Z = this._spreadMode - 1;
+              Z === -1 ? De.add(Ee - 1) : Ee % 2 !== Z ? (De.add(Ee - 1), De.add(Ee)) : (De.add(Ee - 2), De.add(Ee - 1));
               const ze = document.createElement("div");
               if (ze.className = "spread", this.isInPresentationMode) {
                 const Ve = document.createElement("div");
                 Ve.className = "dummyPage", ze.append(Ve);
               }
-              for (const Ve of Oe) {
+              for (const Ve of De) {
                 const ke = this._pages[Ve];
                 ke && (ze.append(ke.div), V.pages.push(ke));
               }
@@ -41666,13 +41666,13 @@ function requirePdf() {
             }
             V.scrollDown = Ee >= V.previousPageNumber, V.previousPageNumber = Ee;
           }
-          function De(Ee) {
+          function Oe(Ee) {
             let V = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : null;
             const {
               div: ce,
-              id: Oe
+              id: De
             } = Ee;
-            if (this._currentPageNumber !== Oe && this._setCurrentPageNumber(Oe), this._scrollMode === u.ScrollMode.PAGE && (E(this, we, Ne).call(this), this.update()), !V && !this.isInPresentationMode) {
+            if (this._currentPageNumber !== De && this._setCurrentPageNumber(De), this._scrollMode === u.ScrollMode.PAGE && (E(this, we, Ne).call(this), this.update()), !V && !this.isInPresentationMode) {
               const Z = ce.offsetLeft + ce.clientLeft, ze = Z + ce.clientWidth, {
                 scrollLeft: Ve,
                 clientWidth: ke
@@ -41691,17 +41691,17 @@ function requirePdf() {
             const Ee = this._pages[this._currentPageNumber - 1];
             this.isInPresentationMode && this._setScale(this._currentScaleValue, {
               noScroll: !0
-            }), E(this, Pe, De).call(this, Ee);
+            }), E(this, Pe, Oe).call(this, Ee);
           }
           async function et(Ee) {
             if (Ee.pdfPage)
               return Ee.pdfPage;
             try {
               var V, ce;
-              const Oe = await this.pdfDocument.getPage(Ee.id);
-              return Ee.pdfPage || Ee.setPdfPage(Oe), (V = (ce = this.linkService)._cachedPageNumber) !== null && V !== void 0 && V.call(ce, Oe.ref) || this.linkService.cachePageRef(Ee.id, Oe.ref), Oe;
-            } catch (Oe) {
-              return console.error("Unable to get page for page view", Oe), null;
+              const De = await this.pdfDocument.getPage(Ee.id);
+              return Ee.pdfPage || Ee.setPdfPage(De), (V = (ce = this.linkService)._cachedPageNumber) !== null && V !== void 0 && V.call(ce, De.ref) || this.linkService.cachePageRef(Ee.id, De.ref), De;
+            } catch (De) {
+              return console.error("Unable to get page for page view", De), null;
             }
           }
           function rt(Ee) {
@@ -45656,22 +45656,22 @@ function PdfReader({
   }, Le = () => {
     c ? c() : document.fullscreenElement ? document.exitFullscreen() : window.history.back();
   }, Ae = (ve) => {
-    var Ne;
-    if ((((Ne = ve == null ? void 0 : ve.content) == null ? void 0 : Ne.text) || "").length > 1e3) {
+    var Oe;
+    if ((((Oe = ve == null ? void 0 : ve.content) == null ? void 0 : Oe.text) || "").length > 1e3) {
       Pe.info("Cannot highlight more than 1000 characters.");
       return;
     }
-    const he = [...t, ve];
-    n && n(he), u && u(he), T && T(ve, he);
+    const Ne = [...Array.isArray(t) ? t : t ? [t] : [], ve];
+    n && n(Ne), u && u(Ne), T && T(ve, Ne);
   };
   useEffect(() => {
     const ve = (he) => {
       var je;
-      const Ne = window.getSelection(), De = ((je = Ne == null ? void 0 : Ne.toString()) == null ? void 0 : je.length) || 0;
-      (he.ctrlKey || he.metaKey) && he.key === "a" && (he.preventDefault(), Pe.info("Select text manually (max 500 characters).")), (he.ctrlKey || he.metaKey) && he.key === "c" && De > 500 && (he.preventDefault(), Pe.info("Cannot copy more than 500 characters."));
+      const Ne = window.getSelection(), Oe = ((je = Ne == null ? void 0 : Ne.toString()) == null ? void 0 : je.length) || 0;
+      (he.ctrlKey || he.metaKey) && he.key === "a" && (he.preventDefault(), Pe.info("Select text manually (max 500 characters).")), (he.ctrlKey || he.metaKey) && he.key === "c" && Oe > 500 && (he.preventDefault(), Pe.info("Cannot copy more than 500 characters."));
     }, ye = (he) => {
-      var De;
-      if ((((De = window.getSelection()) == null ? void 0 : De.toString()) || "").length <= 500) {
+      var Oe;
+      if ((((Oe = window.getSelection()) == null ? void 0 : Oe.toString()) || "").length <= 500) {
         he.preventDefault();
         const je = Math.random().toString(36).substring(2, 12);
         he.clipboardData.setData("text/plain", je);
@@ -45682,11 +45682,11 @@ function PdfReader({
     };
   }, []);
   const F = (ve) => {
-    const ye = t.filter((he) => he.id !== ve);
-    n && n(ye), u && u(ye), I && I(ve, ye);
+    const he = (Array.isArray(t) ? t : t ? [t] : []).filter((Ne) => Ne.id !== ve);
+    n && n(he), u && u(he), I && I(ve, he);
   }, U = (ve, ye) => {
-    const he = t.map((Ne) => (Ne.id === ve && (Ne.comment = ye), Ne));
-    n && n(he), u && u(he), M && M(ve, ye, he);
+    const Ne = (Array.isArray(t) ? t : t ? [t] : []).map((Oe) => (Oe.id === ve && (Oe.comment = ye), Oe));
+    n && n(Ne), u && u(Ne), M && M(ve, ye, Ne);
   }, H = useCallback(
     (ve) => {
       ve.id !== a && i && i(ve.id);
