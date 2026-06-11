@@ -19700,30 +19700,10 @@ function EpubReader({
         }
         const ue = oe.createElement("style");
         ue.innerHTML = `
-          /* Force responsive layout inside the EPUB iframe without breaking epubjs column pagination calculations */
-          html, body {
-            overflow-x: hidden !important;
-            box-sizing: border-box !important;
-            margin: 0 !important;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
-          }
+          /* Styling for react-pdf-highlighter injected elements */
           
-          /* Prevent child elements from overflowing */
-          body * {
-            max-width: 100% !important;
-            box-sizing: border-box !important;
-          }
-          
-          /* Ensure text content wraps properly */
-          p, span, div, h1, h2, h3, h4, h5, h6, li, a, section, article {
-            word-wrap: break-word !important;
-            overflow-wrap: break-word !important;
-            white-space: normal !important;
-            max-width: 100% !important;
-          }
-          
-          /* Make media and tables responsive */
-          img, svg, video, audio, table, pre, code, iframe {
+          /* Make media responsive but leave text layout to epubjs */
+          img, svg, video, audio, table, iframe {
             max-width: 100% !important;
             height: auto !important;
             box-sizing: border-box !important;
