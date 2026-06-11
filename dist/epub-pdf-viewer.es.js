@@ -19700,14 +19700,11 @@ function EpubReader({
         }
         const ue = oe.createElement("style");
         ue.innerHTML = `
-          /* Force responsive layout inside the EPUB iframe */
+          /* Force responsive layout inside the EPUB iframe without breaking epubjs column pagination calculations */
           html, body {
-            max-width: 100% !important;
-            width: 100% !important;
             overflow-x: hidden !important;
             box-sizing: border-box !important;
             margin: 0 !important;
-            padding: 16px 20px !important;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
           }
           
@@ -19875,10 +19872,8 @@ function EpubReader({
             .main-content {
               margin-top: 0 !important;
             }
-            /* Constrain epubjs iframe width to 100% */
+            /* Allow epubjs to calculate exact iframe pixel width for precise pagination */
             .r_epub_root_wrapper iframe {
-              max-width: 100% !important;
-              width: 100% !important;
               box-sizing: border-box !important;
             }
             .r_epub_popup_wrapper .popup .note_popup {
